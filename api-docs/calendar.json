@@ -32,11 +32,11 @@
                         },
                         {
                             "name": "daysahead",
-                            "description": "A date filter to fetch events up until the provided UTC date/time (format is YYYY-MM-DD HH:MM:SS)",
+                            "description": "The number of upcoming days to show availability for.",
                             "paramType": "query",
                             "required": true,
                             "allowMultiple": false,
-                            "dataType": "datetime"
+                            "dataType": "integer"
                         },
                         {
                             "name": "inspector",
