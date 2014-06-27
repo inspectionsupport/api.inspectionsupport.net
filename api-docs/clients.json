@@ -41,7 +41,45 @@
 			]
         }
       ]
-    }
+    },
+      {
+          "path": "/clients/search",
+          "description": "Search Clients",
+          "operations": [
+              {
+                  "httpMethod": "GET",
+                  "summary": "Search Clients by name, email, or phone number. Can return multiple results.",
+                  "responseClass": "void",
+                  "nickname": "clients_search",
+                  "parameters": [
+                      {
+                          "name": "q",
+                          "description": "The search query",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      },
+                      {
+                          "name": "username",
+                          "description": "A username -or- order access key - for an example use 'bsmith'",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      },
+                      {
+                          "name": "password",
+                          "description": "A password -or- order secret access key - for an example use 'password'",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      }
+                  ]
+              }
+          ]
+      }
 	],
   "models":{}
 }

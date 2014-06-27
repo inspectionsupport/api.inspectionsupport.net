@@ -41,7 +41,45 @@
 			]
         }
       ]
-    }
+    },
+      {
+          "path": "/agents/search",
+          "description": "Search Agents",
+          "operations": [
+              {
+                  "httpMethod": "GET",
+                  "summary": "Search agents by name, email, or phone number. Can return multiple results.",
+                  "responseClass": "void",
+                  "nickname": "agents_search",
+                  "parameters": [
+                      {
+                          "name": "q",
+                          "description": "The search query",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      },
+                      {
+                          "name": "username",
+                          "description": "A username -or- order access key - for an example use 'bsmith'",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      },
+                      {
+                          "name": "password",
+                          "description": "A password -or- order secret access key - for an example use 'password'",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      }
+                  ]
+              }
+          ]
+      }
 	],
   "models":{}
 }

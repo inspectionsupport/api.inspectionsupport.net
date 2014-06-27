@@ -38,6 +38,9 @@
         },
         {
             "path": "/api-docs/orders.{format}"
+        },
+        {
+            "path": "/api-docs/calendar.{format}"
         }
     ]
 }
