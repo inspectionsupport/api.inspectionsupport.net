@@ -1,0 +1,39 @@
+{
+    "apiVersion": "1.1",
+    "swaggerVersion": "1.1",
+    "basePath": "https://inspectionsupport.net/test/rest",
+    "resourcePath": "/build",
+    "apis": [
+        {
+            "path": "/build",
+            "description": "Get the ISN Build Number for this ISN",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Obtains the current build number of the ISN",
+                    "responseClass": "ResponseBuild",
+                    "nickname": "build",
+                    "parameters": []
+                }
+            ]
+        }
+    ],
+    "models": {
+        "ResponseBuild": {
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "required": true,
+                    "description": "'ok' or 'error'"
+                },
+                "message": {
+                    "type": "string",
+                    "required": true,
+                    "description": "error message"
+                }
+            },
+            "id": "ResponseUrl"
+
+        }
+    }
+}

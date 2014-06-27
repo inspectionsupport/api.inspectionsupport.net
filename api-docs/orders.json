@@ -1,0 +1,139 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://inspectionsupport.net/test/rest",
+    "resourcePath": "/orders",
+    "apis": [
+        {
+            "path": "/orders/footprints",
+            "description": "Obtain all of the footprints for this user",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Obtains the footprint list for this user",
+                    "responseClass": "void",
+                    "nickname": "footprints",
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/orders/uploadreport",
+            "description": "Upload a report for this Order",
+            "operations": [
+                {
+                    "httpMethod": "PUT",
+                    "summary": "Uploads a report file for this Order",
+                    "responseClass": "void",
+                    "nickname": "uploadreport",
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The ID of the Order (UUID)",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "mimetype",
+                            "description": "The mime type of the file in the stream",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "filename",
+                            "description": "The filename of the file in the stream (the actual file should just be part of the PUT)",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "title",
+                            "description": "The user's title of the report",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/orders/footprint/{id}",
+            "description": "Delete this footprint",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Deletes the footprint",
+                    "responseClass": "void",
+                    "nickname": "footprint",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the footprint",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {}
+}

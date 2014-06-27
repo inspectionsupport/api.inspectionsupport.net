@@ -1,0 +1,94 @@
+{
+    "apiVersion": "1.2",
+    "swaggerVersion": "1.1",
+    "basePath": "https://inspectionsupport.net/test/rest",
+    "resourcePath": "/order",
+    "apis": [
+        {
+            "path": "/order/{id}",
+            "description": "Obtain the order",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Obtains the order for the given id",
+                    "responseClass": "void",
+                    "nickname": "validate",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the order",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/order/complete/{id}",
+            "description": "Complete the order",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "This completes the order with an optional report number (suggested) - this triggers all of the ISN complete-order processing",
+                    "responseClass": "void",
+                    "nickname": "complete",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the order",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "reportnumber",
+                            "description": "The report number to add to the order",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {}
+}
+

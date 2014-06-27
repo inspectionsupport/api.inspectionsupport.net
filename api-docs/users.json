@@ -1,0 +1,81 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://inspectionsupport.net/test/rest",
+    "resourcePath": "/users",
+    "apis": [
+        {
+            "path": "/users",
+            "description": "Get the list of Users",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Get a list of all of the users in the ISN",
+                    "responseClass": "List[ResponseUsers]",
+                    "nickname": "users",
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "description": "A username -or- user access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- user secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "ResponseUsers": {
+            "properties": {
+
+                "id": {
+                    "type": "string",
+                    "required": true,
+                    "description": "id of user"
+                },
+                "office": {
+                    "type": "string",
+                    "required": true,
+                    "description": "office of user"
+                },
+                "firstname": {
+                    "type": "string",
+                    "required": true,
+                    "description": "first name of user"
+                },
+                "lastname": {
+                    "type": "string",
+                    "required": true,
+                    "description": "last name of user"
+                },
+                "displayname": {
+                    "type": "string",
+                    "required": true,
+                    "description": "display name of user"
+                },
+                "helpdeskid": {
+                    "type": "string",
+                    "required": true,
+                    "description": "helpdesk identification of the user"
+                },
+                "show": {
+                    "type": "boolean",
+                    "required": true,
+                    "description": "false if the user is deleted"
+                }
+            },
+            "id": "ResponseUsers"
+        }
+    }
+}

@@ -1,0 +1,153 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://inspectionsupport.net/test/rest",
+    "resourcePath": "/agency",
+    "apis": [
+        {
+            "path": "/agency/{id}",
+            "description": "Obtain the agency",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Obtains the agency for the given id",
+                    "responseClass": "void",
+                    "nickname": "validate",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the agency",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/agency/{id}",
+            "description": "Delete this agency",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Deletes the agency",
+                    "responseClass": "void",
+                    "nickname": "agency",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the agency",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/agency/",
+            "description": "Create an agency",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Creates an agency",
+                    "responseClass": "void",
+                    "nickname": "agency",
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/agency/{id}",
+            "description": "Update an agency",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Update an agency",
+                    "responseClass": "void",
+                    "nickname": "agency",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the agency",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {}
+}
