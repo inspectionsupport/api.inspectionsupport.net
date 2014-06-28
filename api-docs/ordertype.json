@@ -1,0 +1,146 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://inspectionsupport.net/test/rest",
+    "resourcePath": "/ordertype",
+    "apis": [
+        {
+            "path": "/ordertype/{id}",
+            "description": "Delete this Order Type",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Deletes the Order Type",
+                    "responseClass": "void",
+                    "nickname": "ordertype_delete",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the Order Type",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/ordertype/{id}",
+            "description": "Update this Order Type",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Updates the Order Type",
+                    "responseClass": "void",
+                    "nickname": "ordertype_update",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the Order Type",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "name",
+                            "description": "The name of the Order Type",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "description",
+                            "description": "The description of the Order Type",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/ordertype/",
+            "description": "Create this Order Type",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Creates the Order Type",
+                    "responseClass": "void",
+                    "nickname": "ordertype_create",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "description": "The name of the Order Type",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "description",
+                            "description": "The description of the Order Type",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
