@@ -34,6 +34,12 @@
             "path": "/api-docs/agent.{format}"
         },
         {
+            "path": "/api-docs/ordertype.{format}"
+        },
+        {
+            "path": "/api-docs/ordertypes.{format}"
+        },
+        {
             "path": "/api-docs/order.{format}"
         },
         {
