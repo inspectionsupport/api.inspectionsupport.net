@@ -35,6 +35,60 @@
             ]
         },
         {
+            "path": "/orders/search",
+            "description": "Search Orders",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Search Orders by street address, report number, and/or date and time. Can return multiple results.",
+                    "responseClass": "void",
+                    "nickname": "clients_search",
+                    "parameters": [
+                        {
+                            "name": "address1",
+                            "description": "The street address",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "reportnumber",
+                            "description": "The report number",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "datetime",
+                            "description": "The date/time in YYYY-MM-DD HH:II format",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+        {
             "path": "/orders/uploadreport",
             "description": "Upload a report for this Order",
             "operations": [
