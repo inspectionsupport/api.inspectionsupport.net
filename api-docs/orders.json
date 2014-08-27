@@ -87,7 +87,7 @@
                     ]
                 }
             ]
-        }
+        },
         {
             "path": "/orders/uploadreport",
             "description": "Upload a report for this Order",
