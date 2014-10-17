@@ -151,6 +151,60 @@
             ]
         },
         {
+            "path": "/orders/addreporturl",
+            "description": "Upload/add a report for this Order via a URL",
+            "operations": [
+                {
+                    "httpMethod": "PUT",
+                    "summary": "Adds a report url for this Order",
+                    "responseClass": "void",
+                    "nickname": "addreporturl",
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "id",
+                            "description": "The ID of the Order (UUID)",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "url",
+                            "description": "The URL for the external report (usually a reference to your own system)",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "title",
+                            "description": "The user's title of the report",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "path": "/orders/uploadattachment",
             "description": "Upload an attachment for this Order",
             "operations": [
