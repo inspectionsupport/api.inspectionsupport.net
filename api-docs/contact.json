@@ -44,6 +44,75 @@
         },
         {
             "path": "/contact/{id}",
+            "description": "Update the contact",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Update the contact for the given id",
+                    "responseClass": "",
+                    "nickname": "contact_update",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the contact",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+        ,
+        {
+            "path": "/contact/",
+            "description": "Create the contact",
+            "operations": [
+                {
+                    "httpMethod": "POST",
+                    "summary": "Create a contact",
+                    "responseClass": "",
+                    "nickname": "contact_create",
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/contact/{id}",
             "description": "Delete this contact",
             "operations": [
                 {
