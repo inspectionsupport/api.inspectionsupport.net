@@ -1,0 +1,93 @@
+{
+  "apiVersion":"1.0",
+  "swaggerVersion":"1.1",
+  "basePath":"https://inspectionsupport.net/test/rest",
+  "resourcePath":"/contacts/{type}",
+  "apis":[
+    {
+      "path":"/contacts",
+      "description":"Obtain all of the contacts for this user",
+      "operations":[
+        {
+          "httpMethod":"GET",
+          "summary":"Obtains all of the contacts in the office for this user",
+          "responseClass":"void",
+          "nickname":"contacts",
+          "parameters":[
+              {
+                  "name":"type",
+                  "description":"The contact type to get contacts for",
+                  "paramType":"path",
+                  "required":false,
+                  "allowMultiple":false,
+                  "dataType":"string"
+              },
+              {
+                  "name":"username",
+                  "description":"A username -or- order access key - for an example use 'bsmith'",
+                  "paramType":"query",
+                  "required":true,
+                  "allowMultiple":false,
+                  "dataType":"string"
+              },
+				{
+				  "name":"password",
+				  "description":"A password -or- order secret access key - for an example use 'password'",
+				  "paramType":"query",
+				  "required":true,
+				  "allowMultiple":false,
+				  "dataType":"string"
+				},
+				{
+				  "name":"after",
+				  "description":"A date filter for filtering after the given UTC date/time (format is YYYY-MM-DD HH:MM:SS)",
+				  "paramType":"query",
+				  "required":false,
+				  "allowMultiple":false,
+				  "dataType":"datetime"
+				}
+			]
+        }
+      ]
+    },
+      {
+          "path": "/contacts/search",
+          "description": "Search Contacts",
+          "operations": [
+              {
+                  "httpMethod": "GET",
+                  "summary": "Search contacts by name, email, or phone number. Can return multiple results.",
+                  "responseClass": "void",
+                  "nickname": "contacts_search",
+                  "parameters": [
+                      {
+                          "name": "q",
+                          "description": "The search query",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      },
+                      {
+                          "name": "username",
+                          "description": "A username -or- order access key - for an example use 'bsmith'",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      },
+                      {
+                          "name": "password",
+                          "description": "A password -or- order secret access key - for an example use 'password'",
+                          "paramType": "query",
+                          "required": true,
+                          "allowMultiple": false,
+                          "dataType": "string"
+                      }
+                  ]
+              }
+          ]
+      }
+	],
+  "models":{}
+}

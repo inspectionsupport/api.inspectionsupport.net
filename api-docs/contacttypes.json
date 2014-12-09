@@ -1,0 +1,38 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://inspectionsupport.net/test/rest",
+    "resourcePath": "/contacttypes",
+    "apis": [
+        {
+            "path": "/contacttypes",
+            "description": "Get the list of Contact Types",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Gets the list of contact types",
+                    "responseClass": "void",
+                    "nickname": "contacttypes_fetch",
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "description": "A username -or- contact access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- contact secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

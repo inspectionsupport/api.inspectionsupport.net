@@ -1,0 +1,197 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.1",
+    "basePath": "https://inspectionsupport.net/test/rest",
+    "resourcePath": "/contact",
+    "apis": [
+        {
+            "path": "/contact/{id}",
+            "description": "Obtain the contact",
+            "operations": [
+                {
+                    "httpMethod": "GET",
+                    "summary": "Obtains the contact for the given id",
+                    "responseClass": "ResponseContact",
+                    "nickname": "contact_get",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the contact",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/contact/{id}",
+            "description": "Delete this contact",
+            "operations": [
+                {
+                    "httpMethod": "DELETE",
+                    "summary": "Deletes the contact",
+                    "responseClass": "void",
+                    "nickname": "contact_delete",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "The ID of the contact",
+                            "paramType": "path",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "username",
+                            "description": "A username -or- order access key - for an example use 'bsmith'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "password",
+                            "description": "A password -or- order secret access key - for an example use 'password'",
+                            "paramType": "query",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+
+        "ResponseContact": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "required": true,
+                    "description": "id of contact"
+                },
+                "type": {
+                    "type": "string",
+                    "required": true,
+                    "description": "type of contact"
+                },
+                "firstname": {
+                    "type": "string",
+                    "required": true,
+                    "description": "first name of contact"
+                },
+                "lastname": {
+                    "type": "string",
+                    "required": true,
+                    "description": "last name of contact"
+                },
+                "displayname": {
+                    "type": "string",
+                    "required": true,
+                    "description": "display name of contact"
+                },
+                "email": {
+                    "type": "string",
+                    "required": true,
+                    "description": "email address of contact"
+                },
+                "url": {
+                    "type": "string",
+                    "required": true,
+                    "description": "url for the contact"
+                },
+                "address1": {
+                    "type": "string",
+                    "required": true,
+                    "description": "address (first line) of the contact"
+                },
+                "address2": {
+                    "type": "string",
+                    "required": true,
+                    "description": "address (second line) of the contact"
+                },
+                "city": {
+                    "type": "string",
+                    "required": true,
+                    "description": "contact's city"
+                },
+                "state": {
+                    "type": "string",
+                    "required": true,
+                    "description": "contact's state"
+                },
+                "stateabbreviation": {
+                    "type": "string",
+                    "required": true,
+                    "description": "contact's state (abbreviation)"
+                },
+                "zip": {
+                    "type": "string",
+                    "required": true,
+                    "description": "zip/postal code for the contact"
+                },
+                "workphone": {
+                    "type": "string",
+                    "required": true,
+                    "description": "work phone number for the contact"
+                },
+                "homephone": {
+                    "type": "string",
+                    "required": true,
+                    "description": "home phone number for the contact"
+                },
+                "mobilephone": {
+                    "type": "string",
+                    "required": true,
+                    "description": "cell / mobile phone for the contact"
+                },
+                "workfax": {
+                    "type": "string",
+                    "required": true,
+                    "description": "work fax number for the contact"
+                },
+                "homefax": {
+                    "type": "string",
+                    "required": true,
+                    "description": "contact's license number"
+                },
+                "notes": {
+                    "type": "string",
+                    "required": true,
+                    "description": "notes for the contact"
+                },
+                "show": {
+                    "type": "boolean",
+                    "required": true,
+                    "description": "false if the contact is deleted"
+                },
+                "modified": {
+                    "type": "datetime",
+                    "required": true,
+                    "description": "the last date/time this contact was modified (in UTC)"
+                }
+            },
+            "id": "ResponseContact"
+        }
+    }
+}
