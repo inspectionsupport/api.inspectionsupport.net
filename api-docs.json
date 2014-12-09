@@ -1,5 +1,5 @@
 {
-    "apiVersion": "1.3",
+    "apiVersion": "1.4",
     "swaggerVersion": "2.0.30",
     "basePath": "http://api.inspectionsupport.net",
     "apis": [
@@ -35,6 +35,18 @@
         },
         {
             "path": "/api-docs/agent.{format}"
+        },
+        {
+            "path": "/api-docs/contacts.{format}"
+        },
+        {
+            "path": "/api-docs/contact.{format}"
+        },
+        {
+            "path": "/api-docs/contacttype.{format}"
+        },
+        {
+            "path": "/api-docs/contactypes.{format}"
         },
         {
             "path": "/api-docs/ordertype.{format}"
