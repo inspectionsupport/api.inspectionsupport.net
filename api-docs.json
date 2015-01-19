@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.6",
+  "apiVersion": "1.61",
   "swaggerVersion": "2.0.30",
   "basePath": "http://api.inspectionsupport.net",
   "apis": [
@@ -46,7 +46,7 @@
       "path": "/api-docs/escrowofficers.{format}"
     },
     {
-      "path": "/api-docs/escrowoffice.{format}"
+      "path": "/api-docs/escrowofficer.{format}"
     },
     {
       "path": "/api-docs/contacts.{format}"
