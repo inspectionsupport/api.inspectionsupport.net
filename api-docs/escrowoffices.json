@@ -2,17 +2,17 @@
   "apiVersion": "1.0",
   "swaggerVersion": "1.1",
   "basePath": "https://inspectionsupport.net/test/rest",
-  "resourcePath": "/agencies",
+  "resourcePath": "/escrowoffices",
   "apis": [
     {
-      "path": "/agencies",
-      "description": "Obtain all of the agencies for this user",
+      "path": "/escrowoffices",
+      "description": "Obtain all of the escrow offices for this user",
       "operations": [
         {
           "httpMethod": "GET",
-          "summary": "Obtains all of the agencies in the office for this user",
+          "summary": "Obtains all of the escrow offices in the office for this user",
           "responseClass": "void",
-          "nickname": "agencies",
+          "nickname": "escrowoffices",
           "parameters": [
             {
               "name": "username",
@@ -29,28 +29,20 @@
               "required": true,
               "allowMultiple": false,
               "dataType": "string"
-            },
-            {
-              "name": "after",
-              "description": "A date filter for filtering after the given UTC date/time (format is YYYY-MM-DD HH:MM:SS)",
-              "paramType": "query",
-              "required": false,
-              "allowMultiple": false,
-              "dataType": "datetime"
             }
           ]
         }
       ]
     },
     {
-      "path": "/agencies/search",
-      "description": "Search Agencies",
+      "path": "/escrowoffices/search",
+      "description": "Search Escrow Offices",
       "operations": [
         {
           "httpMethod": "GET",
-          "summary": "Search Agencies by name, email, or phone number. Can return multiple results.",
+          "summary": "Search Escrow Offices by name, email, or phone number. Can return multiple results.",
           "responseClass": "void",
-          "nickname": "agencies_search",
+          "nickname": "escrowoffices_search",
           "parameters": [
             {
               "name": "q",

@@ -1,68 +1,80 @@
 {
-    "apiVersion": "1.52",
-    "swaggerVersion": "2.0.30",
-    "basePath": "http://api.inspectionsupport.net",
-    "apis": [
-        {
-            "path": "/api-docs/companykey.{format}"
-        },
-        {
-            "path": "/api-docs/build.{format}"
-        },
-        {
-            "path": "/api-docs/me.{format}"
-        },
-        {
-            "path": "/api-docs/users.{format}"
-        },
-        {
-            "path": "/api-docs/user.{format}"
-        },
-        {
-            "path": "/api-docs/clients.{format}"
-        },
-        {
-            "path": "/api-docs/client.{format}"
-        },
-        {
-            "path": "/api-docs/agencies.{format}"
-        },
-        {
-            "path": "/api-docs/agency.{format}"
-        },
-        {
-            "path": "/api-docs/agents.{format}"
-        },
-        {
-            "path": "/api-docs/agent.{format}"
-        },
-        {
-            "path": "/api-docs/contacts.{format}"
-        },
-        {
-            "path": "/api-docs/contact.{format}"
-        },
-        {
-            "path": "/api-docs/contacttype.{format}"
-        },
-        {
-            "path": "/api-docs/contacttypes.{format}"
-        },
-        {
-            "path": "/api-docs/ordertype.{format}"
-        },
-        {
-            "path": "/api-docs/ordertypes.{format}"
-        },
-        {
-            "path": "/api-docs/order.{format}"
-        },
-        {
-            "path": "/api-docs/orders.{format}"
-        },
-        {
-            "path": "/api-docs/calendar.{format}"
-        }
-    ]
+  "apiVersion": "1.6",
+  "swaggerVersion": "2.0.30",
+  "basePath": "http://api.inspectionsupport.net",
+  "apis": [
+    {
+      "path": "/api-docs/companykey.{format}"
+    },
+    {
+      "path": "/api-docs/build.{format}"
+    },
+    {
+      "path": "/api-docs/me.{format}"
+    },
+    {
+      "path": "/api-docs/users.{format}"
+    },
+    {
+      "path": "/api-docs/user.{format}"
+    },
+    {
+      "path": "/api-docs/clients.{format}"
+    },
+    {
+      "path": "/api-docs/client.{format}"
+    },
+    {
+      "path": "/api-docs/agencies.{format}"
+    },
+    {
+      "path": "/api-docs/agency.{format}"
+    },
+    {
+      "path": "/api-docs/agents.{format}"
+    },
+    {
+      "path": "/api-docs/agent.{format}"
+    },
+    {
+      "path": "/api-docs/escrowoffices.{format}"
+    },
+    {
+      "path": "/api-docs/escrowoffice.{format}"
+    },
+    {
+      "path": "/api-docs/escrowofficers.{format}"
+    },
+    {
+      "path": "/api-docs/escrowoffice.{format}"
+    },
+    {
+      "path": "/api-docs/contacts.{format}"
+    },
+    {
+      "path": "/api-docs/contact.{format}"
+    },
+    {
+      "path": "/api-docs/contacttype.{format}"
+    },
+    {
+      "path": "/api-docs/contacttypes.{format}"
+    },
+    {
+      "path": "/api-docs/ordertype.{format}"
+    },
+    {
+      "path": "/api-docs/ordertypes.{format}"
+    },
+    {
+      "path": "/api-docs/order.{format}"
+    },
+    {
+      "path": "/api-docs/orders.{format}"
+    },
+    {
+      "path": "/api-docs/calendar.{format}"
+    }
+  ]
 }
 

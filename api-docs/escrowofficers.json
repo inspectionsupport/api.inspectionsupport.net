@@ -2,17 +2,17 @@
   "apiVersion": "1.0",
   "swaggerVersion": "1.1",
   "basePath": "https://inspectionsupport.net/test/rest",
-  "resourcePath": "/agencies",
+  "resourcePath": "/escrowofficers",
   "apis": [
     {
-      "path": "/agencies",
-      "description": "Obtain all of the agencies for this user",
+      "path": "/escrowofficers",
+      "description": "Obtain all of the escrow officers for this user",
       "operations": [
         {
           "httpMethod": "GET",
-          "summary": "Obtains all of the agencies in the office for this user",
+          "summary": "Obtains all of the escrow officers in the office for this user",
           "responseClass": "void",
-          "nickname": "agencies",
+          "nickname": "escrowofficers",
           "parameters": [
             {
               "name": "username",
@@ -43,14 +43,14 @@
       ]
     },
     {
-      "path": "/agencies/search",
-      "description": "Search Agencies",
+      "path": "/escrowofficers/search",
+      "description": "Search Agents",
       "operations": [
         {
           "httpMethod": "GET",
-          "summary": "Search Agencies by name, email, or phone number. Can return multiple results.",
+          "summary": "Search escrow officers by name, email, or phone number. Can return multiple results.",
           "responseClass": "void",
-          "nickname": "agencies_search",
+          "nickname": "escrowofficers_search",
           "parameters": [
             {
               "name": "q",
