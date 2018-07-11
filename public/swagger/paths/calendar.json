@@ -6,7 +6,7 @@
             ],
             "summary": "Obtain all available slots",
             "description": "Obtain all available slots for an inspector based on zip, services and date offsets",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

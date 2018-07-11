@@ -129,189 +129,2308 @@
     ],
     "paths": {
         "/companykey": {
-            "$ref": "./paths/misc.json#/companykey"
+            "get": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "Fetch build number of this ISN",
+                "description": "Fetch the build number of this ISN.  ISN increments the build number when new updates are released.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A Build Response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/BuildResponse"
+                        }
+                    }
+                }
+            }
         },
         "/me": {
-            "$ref": "./paths/misc.json#/me"
+            "get": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "Fetch build number of this ISN",
+                "description": "Fetch the build number of this ISN.  ISN increments the build number when new updates are released.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A Build Response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/BuildResponse"
+                        }
+                    }
+                }
+            }
         },
         "/offices": {
-            "$ref": "./paths/offices.json#/index"
+            "get": {
+                "tags": [
+                    "offices"
+                ],
+                "summary": "Fetch offices for this ISN",
+                "description": "Fetch the list of offices for this ISN.  Each user belongs to an office but may login to one or more offices.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "An OfficesResponse",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OfficesResponse"
+                        }
+                    }
+                }
+            }
         },
         "/orders": {
-            "$ref": "./paths/orders.json#/index"
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Find all of the orders",
+                "description": "Find all of the orders, it will return an array with client entries containing an identifier, a boolean if the client is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - return a list of orders which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "datetimeafter",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - return a list of orders which are after the date/time provided (date/time of the inspection)"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - comma list of IDs to return"
+                    },
+                    {
+                        "in": "query",
+                        "name": "agentuuid",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - return a list of orders which are associated with this real estate agent's uuid"
+                    },
+                    {
+                        "in": "query",
+                        "name": "insuranceagentuuid",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - return a list of orders which are associated with this insurance agent's uuid"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of orders.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrdersResponse"
+                        }
+                    }
+                }
+            }
         },
         "/orders/footprints": {
-            "$ref": "./paths/orders.json#/footprints"
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Fetch all footprints",
+                "description": "Find all of the user's footprints",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A list of order footprints (a list of FootprintEntries).",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/FootprintResponse"
+                        }
+                    }
+                }
+            }
         },
         "/orders/search": {
-            "$ref": "./paths/orders.json#/search"
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Find an order",
+                "description": "Find orders based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "address1",
+                        "required": false,
+                        "type": "string",
+                        "description": "[ optional ] - search time to look for the order by address1"
+                    },
+                    {
+                        "in": "query",
+                        "name": "datetime",
+                        "required": false,
+                        "type": "string",
+                        "description": "[ optional ] - search time to look for the order by date/time of the inspection"
+                    },
+                    {
+                        "in": "query",
+                        "name": "reportnumber",
+                        "required": false,
+                        "type": "string",
+                        "description": "[ optional ] - search time to look for the order by reportnumber"
+                    },
+                    {
+                        "in": "query",
+                        "name": "year",
+                        "required": false,
+                        "type": "string",
+                        "description": "[ optional ] - search time to look for the order by year"
+                    },
+                    {
+                        "in": "query",
+                        "name": "client",
+                        "required": false,
+                        "type": "string",
+                        "description": "[ optional ] - search time to look for the order by client id (send in client's UUID/id)"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of orders.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrdersResponse"
+                        }
+                    }
+                }
+            }
         },
         "/order/{id}": {
-            "$ref": "./paths/order.json#/id"
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Fetch an order",
+                "description": "Fetch a specific order",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the order to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An order response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrderResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Delete an order",
+                "description": "Delete an order",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the order to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Updates an order",
+                "description": "Updates an order.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the order to update"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrderEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/order": {
-            "$ref": "./paths/order.json#/index"
+            "post": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Creates an order",
+                "description": "Creates an order.",
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrderEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/order/fees/{id}": {
-            "$ref": "./paths/order.json#/fees"
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Fetch the order fees from an order",
+                "description": "Will return all of the order fees associated with the given order id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id of the order to fetch the fees for"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An OrderFees response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrderFeesResponse"
+                        }
+                    }
+                }
+            }
         },
         "/order/history/{id}": {
-            "$ref": "./paths/order.json#/history"
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Fetch the order history from an order",
+                "description": "Will return all of the order history objects associated with the given order id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id of the order to fetch the fees for"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An OrderHistory response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrderHistoryResponse"
+                        }
+                    }
+                }
+            }
         },
         "/order/webdelivery/{id}": {
-            "$ref": "./paths/order.json#/webdelivery"
+            "get": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Fetch the web delivery url from an order",
+                "description": "returns the URL for the order's web delivery",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id of the order to fetch the url for"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An WebDeliveryUrl response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/WebDeliveryUrlResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agents": {
-            "$ref": "./paths/agents.json#/index"
+            "get": {
+                "tags": [
+                    "agents"
+                ],
+                "summary": "Find all of the agents",
+                "description": "Find all of the agents, it will return an array with agent entries containing an identifier, a boolean if the agent is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - return a list of agents which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - comma list of IDs to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of agents.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/AgentsResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agents/search": {
-            "$ref": "./paths/agents.json#/search"
+            "get": {
+                "tags": [
+                    "agents"
+                ],
+                "summary": "Find an agent",
+                "description": "Find agents based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": false,
+                        "type": "string",
+                        "description": "term to use for the agent search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of agents.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/AgentsSearchResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agent/{id}": {
-            "$ref": "./paths/agent.json#/id"
+            "get": {
+                "tags": [
+                    "agents"
+                ],
+                "summary": "Find an agent",
+                "description": "Find an agent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the agent to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An agent response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/AgentResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "agents"
+                ],
+                "summary": "Delete an agent",
+                "description": "Delete an agent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the agent to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "agents"
+                ],
+                "summary": "Updates an agent",
+                "description": "Updates an agent.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the agent to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agent": {
-            "$ref": "./paths/agent.json#/index"
+            "post": {
+                "tags": [
+                    "agents"
+                ],
+                "summary": "Creates an agent",
+                "description": "Creates an agent.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/Agent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agent/lookup": {
-            "$ref": "./paths/agent.json#/lookup"
-        },
-        "/insuranceagents": {
-            "$ref": "./paths/insuranceagents.json#/index"
+            "get": {
+                "tags": [
+                    "agents"
+                ],
+                "summary": "Find one agent by an email lookup",
+                "description": "Find a single agent by email address",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": true,
+                        "type": "string",
+                        "description": "the email address to use during the lookup"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An agent response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/AgentResponse"
+                        }
+                    }
+                }
+            }
         },
         "/insuranceagents/search": {
-            "$ref": "./paths/insuranceagents.json#/search"
+            "get": {
+                "tags": [
+                    "insuranceagents"
+                ],
+                "summary": "Find a insurance agent",
+                "description": "Find insurance agent based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": false,
+                        "type": "string",
+                        "description": "term to use for the insurance agent search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of InsuranceAgents.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/InsuranceAgentSearchResponse"
+                        }
+                    }
+                }
+            }
         },
         "/insuranceagent/{id}": {
-            "$ref": "./paths/insuranceagent.json#/id"
+            "get": {
+                "tags": [
+                    "insuranceagents"
+                ],
+                "summary": "Find a insurance agent",
+                "description": "Find a insurance agent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the insurance agent to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A InsuranceAgent response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/InsuranceAgentResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "insuranceagents"
+                ],
+                "summary": "Delete a insurance agent",
+                "description": "Delete a insurance agent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the insurance agent to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "insuranceagents"
+                ],
+                "summary": "Updates a insurance agent",
+                "description": "Updates a insurance agent.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the insurance agent to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
-        "/insuranceagent": {
-            "$ref": "./paths/insuranceagent.json#/index"
+        "/insuranceagents": {
+            "get": {
+                "tags": [
+                    "insuranceagents"
+                ],
+                "summary": "Find all of the insurance agents",
+                "description": "Find all of the insuranceagents, it will return an array with insurance agent entries containing an identifier, a boolean if the insurance agent is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - return a list of insurance agent which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - comma list of IDs to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of InsuranceAgentResponse.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/InsuranceAgentResponse"
+                        }
+                    }
+                }
+            }
         },
         "/insuranceagent/lookup": {
-            "$ref": "./paths/insuranceagent.json#/lookup"
+            "get": {
+                "tags": [
+                    "insuranceagents"
+                ],
+                "summary": "Find one insurance agent by an email lookup",
+                "description": "Find a single insurance agent by email address",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "type": "string",
+                        "required": true,
+                        "description": "the email address to use during the lookup"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A InsuranceAgent response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/InsuranceAgentResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agencies": {
-            "$ref": "./paths/agencies.json#/index"
+            "get": {
+                "tags": [
+                    "agencies"
+                ],
+                "summary": "Find all of the agencys",
+                "description": "Find all of the agencies, it will return an array with agency entries containing an identifier, a boolean if the agency is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - return a list of agency which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - comma list of IDs to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of AgencyResponse.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/AgencyResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agencies/search": {
-            "$ref": "./paths/agencies.json#/search"
+            "get": {
+                "tags": [
+                    "agencies"
+                ],
+                "summary": "Find an agency",
+                "description": "Find agency based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": false,
+                        "type": "string",
+                        "description": "term to use for the agency search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of Agencies.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/AgenciesSearchResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agency/{id}": {
-            "$ref": "./paths/agency.json#/id"
+            "get": {
+                "tags": [
+                    "agencies"
+                ],
+                "summary": "Find a agency",
+                "description": "Find a agency",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the agency to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A Agency response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/AgencyResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "agencies"
+                ],
+                "summary": "Delete a agency",
+                "description": "Delete a agency",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the agency to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "agencies"
+                ],
+                "summary": "Updates an agency",
+                "description": "Updates an agency.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the agency to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/agency": {
-            "$ref": "./paths/agency.json#/index"
+            "post": {
+                "tags": [
+                    "agencies"
+                ],
+                "summary": "Creates an agency",
+                "description": "Creates an agency.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/Agency"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/clients": {
-            "$ref": "./paths/clients.json#/index"
+            "get": {
+                "tags": [
+                    "clients"
+                ],
+                "summary": "Find all of the clients",
+                "description": "Find all of the clients, it will return an array with client entries containing an identifier, a boolean if the client is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - return a list of clients which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - comma list of IDs to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of clients.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ClientsResponse"
+                        }
+                    }
+                }
+            }
         },
         "/clients/search": {
-            "$ref": "./paths/clients.json#/search"
+            "get": {
+                "tags": [
+                    "clients"
+                ],
+                "summary": "Find a client",
+                "description": "Find clients based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": false,
+                        "type": "string",
+                        "description": "term to use for the client search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of clients.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ClientsSearchResponse"
+                        }
+                    }
+                }
+            }
         },
         "/client/{id}": {
-            "$ref": "./paths/client.json#/id"
+            "get": {
+                "tags": [
+                    "clients"
+                ],
+                "summary": "Find a client",
+                "description": "Find a client",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string",
+                        "description": "the id (uuid) of the client to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A client response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ClientResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "clients"
+                ],
+                "summary": "Delete a client",
+                "description": "Delete a client",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the client to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "clients"
+                ],
+                "summary": "Updates a client",
+                "description": "Updates a client.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the client to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/client/": {
-            "$ref": "./paths/client.json#/index"
+            "post": {
+                "tags": [
+                    "clients"
+                ],
+                "summary": "Creates an client",
+                "description": "Creates an client.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/Client"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/client/lookup": {
-            "$ref": "./paths/client.json#/lookup"
+            "get": {
+                "tags": [
+                    "clients"
+                ],
+                "summary": "Find one client by an email lookup",
+                "description": "Find a single client by email address",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": true,
+                        "type": "string",
+                        "description": "the email address to use during the lookup"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A client response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ClientResponse"
+                        }
+                    }
+                }
+            }
         },
         "/users": {
-            "$ref": "./paths/users.json#/index"
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Find all of the users",
+                "description": "Find all of the users, it will return an array with user entries containing an identifier, a boolean if the user is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - return a list of user which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - comma list of IDs to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of UserResponse.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/UserResponse"
+                        }
+                    }
+                }
+            }
         },
         "/users/search": {
-            "$ref": "./paths/users.json#/search"
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Find a user",
+                "description": "Find user based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": false,
+                        "type": "string",
+                        "description": "term to use for the user search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of Users.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/UserSearchResponse"
+                        }
+                    }
+                }
+            }
         },
         "/user/{id}": {
-            "$ref": "./paths/user.json#/id"
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Find a user",
+                "description": "Find a user",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the user to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A User response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/UserResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Delete a user",
+                "description": "Delete a user",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the user to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Updates a user",
+                "description": "Updates a user.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the user to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/user": {
-            "$ref": "./paths/user.json#/index"
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Creates a user",
+                "description": "Creates a user.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/user/lookup": {
-            "$ref": "./paths/user.json#/lookup"
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Find one user by an email lookup",
+                "description": "Find a single user by email address",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": true,
+                        "type": "string",
+                        "description": "the email address to use during the lookup"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A User response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/UserResponse"
+                        }
+                    }
+                }
+            }
         },
         "/contacts": {
-            "$ref": "./paths/contacts.json#/index"
+            "get": {
+                "tags": [
+                    "contacts"
+                ],
+                "summary": "Find all of the contacts",
+                "description": "Find all of the contacts, it will return an array with contact entries containing an identifier, a boolean if the contact is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - return a list of contact which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - comma list of IDs to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of ContactResponse.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ContactResponse"
+                        }
+                    }
+                }
+            }
         },
         "/contacts/search": {
-            "$ref": "./paths/contacts.json#/search"
+            "get": {
+                "tags": [
+                    "contacts"
+                ],
+                "summary": "Find a contact",
+                "description": "Find contact based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": false,
+                        "type": "string",
+                        "description": "term to use for the contact search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of Contacts.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ContactSearchResponse"
+                        }
+                    }
+                }
+            }
         },
         "/contact/{id}": {
-            "$ref": "./paths/contact.json#/id"
+            "get": {
+                "tags": [
+                    "contacts"
+                ],
+                "summary": "Find a contact",
+                "description": "Find a contact",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the contact to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A Contact response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ContactResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "contacts"
+                ],
+                "summary": "Delete a contact",
+                "description": "Delete a contact",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the contact to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "contacts"
+                ],
+                "summary": "Updates a contact",
+                "description": "Updates a contact.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the contact to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/contact/": {
-            "$ref": "./paths/contact.json#/index"
+            "post": {
+                "tags": [
+                    "contacts"
+                ],
+                "summary": "Creates an contact",
+                "description": "Creates an contact.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/Contact"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/contact/lookup": {
-            "$ref": "./paths/contact.json#/lookup"
+            "get": {
+                "tags": [
+                    "contacts"
+                ],
+                "summary": "Find one contact by an email lookup",
+                "description": "Find a single contact by email address",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": true,
+                        "type": "string",
+                        "description": "the email address to use during the lookup"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A Contact response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ContactResponse"
+                        }
+                    }
+                }
+            }
         },
         "/escrowofficers": {
-            "$ref": "./paths/escrowofficers.json#/index"
+            "get": {
+                "tags": [
+                    "escrowofficers"
+                ],
+                "summary": "Find all of the escrow officers",
+                "description": "Find all of the escrowofficers, it will return an array with escrow officer entries containing an identifier, a boolean if the escrow officer is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - return a list of escrow officer which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "required": false,
+                        "type": "string",
+                        "description": "[optional] - comma list of IDs to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of EscrowOfficerResponse.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOfficerResponse"
+                        }
+                    }
+                }
+            }
         },
         "/escrowofficers/search": {
-            "$ref": "./paths/escrowofficers.json#/search"
+            "get": {
+                "tags": [
+                    "escrowoffices"
+                ],
+                "summary": "Find an escrow office",
+                "description": "Find escrow office based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "type": "string",
+                        "required": false,
+                        "description": "term to use for the escrow office search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of Escrow Offices.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOfficesSearchResponse"
+                        }
+                    }
+                }
+            }
         },
         "/escrowofficer/{id}": {
-            "$ref": "./paths/escrowofficer.json#/id"
+            "get": {
+                "tags": [
+                    "escrowofficers"
+                ],
+                "summary": "Find a escrow officer",
+                "description": "Find a escrow officer",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the escrow officer to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A EscrowOfficer response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOfficerResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "escrowofficers"
+                ],
+                "summary": "Delete a escrow officer",
+                "description": "Delete a escrow officer",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the escrow officer to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "escrowofficers"
+                ],
+                "summary": "Updates a escrow officer",
+                "description": "Updates a escrow officer.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the escrow officer to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
-        "/escrowofficer/": {
-            "$ref": "./paths/escrowofficer.json#/index"
+        "/escrowofficer": {
+            "post": {
+                "tags": [
+                    "escrowofficers"
+                ],
+                "summary": "Creates an escrow officer",
+                "description": "Creates an escrow officer.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOfficer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/escrowofficer/lookup": {
-            "$ref": "./paths/escrowofficer.json#/lookup"
+            "get": {
+                "tags": [
+                    "escrowofficers"
+                ],
+                "summary": "Find one escrow officer by an email lookup",
+                "description": "Find a single escrow officer by email address",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": true,
+                        "type": "string",
+                        "description": "the email address to use during the lookup"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A EscrowOfficer response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOfficerResponse"
+                        }
+                    }
+                }
+            }
         },
         "/escrowoffices": {
-            "$ref": "./paths/escrowoffices.json#/index"
+            "get": {
+                "tags": [
+                    "escrowoffices"
+                ],
+                "summary": "Find all of the escrow offices",
+                "description": "Find all of the escrow offices, it will return an array with escrow office entries containing an identifier, a boolean if the escrow office is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "after",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - return a list of escrow office which were modified after the date/time provided"
+                    },
+                    {
+                        "in": "query",
+                        "name": "uuids",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - comma list of IDs to return"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of EscrowOffices entries.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOfficesResponse"
+                        }
+                    }
+                }
+            }
         },
         "/escrowoffices/search": {
-            "$ref": "./paths/escrowoffices.json#/search"
+            "get": {
+                "tags": [
+                    "escrowoffices"
+                ],
+                "summary": "Find an escrow office",
+                "description": "Find escrow office based on a query string",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "required": false,
+                        "type": "string",
+                        "description": "term to use for the escrow office search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of Escrow Offices.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOfficesSearchResponse"
+                        }
+                    }
+                }
+            }
         },
         "/escrowoffice/{id}": {
-            "$ref": "./paths/escrowoffice.json#/id"
+            "get": {
+                "tags": [
+                    "escrowoffices"
+                ],
+                "summary": "Find a escrow office",
+                "description": "Find a escrow office",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the escrow office to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A EscrowOffice response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOfficeResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "escrowoffices"
+                ],
+                "summary": "Delete a escrow office",
+                "description": "Delete a escrow office",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the escrow office to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "escrowoffices"
+                ],
+                "summary": "Updates an escrow office",
+                "description": "Updates an escrow office.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the escrow office to update"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/escrowoffice": {
-            "$ref": "./paths/escrowoffice.json#/index"
+            "post": {
+                "tags": [
+                    "escrowoffices"
+                ],
+                "summary": "Creates an escrow office",
+                "description": "Creates an escrow office.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/EscrowOffice"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/build": {
-            "$ref": "./paths/misc.json#/build"
+            "get": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "Fetch build number of this ISN",
+                "description": "Fetch the build number of this ISN.  ISN increments the build number when new updates are released.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A Build Response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/BuildResponse"
+                        }
+                    }
+                }
+            }
         },
         "/time": {
-            "$ref": "./paths/misc.json#/time"
+            "get": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "Fetch the date/time for this ISN",
+                "description": "Fetch the the date/time for this ISN in both UTC and client-local time adjusted for their timezone",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A Time Response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/TimeResponse"
+                        }
+                    }
+                }
+            }
         },
         "/contacttype": {
-            "$ref": "./paths/contacttype.json#/index"
+            "post": {
+                "tags": [
+                    "contacttypes"
+                ],
+                "summary": "Creates an contact type",
+                "description": "Creates an contact type.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ContactTypeEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/contacttypes/": {
-            "$ref": "./paths/contacttypes.json#/index"
+            "get": {
+                "tags": [
+                    "contacttypes"
+                ],
+                "summary": "Find all of the contact types",
+                "description": "Find all of the contact types, it will return an array with contact type entries containing an identifier, a boolean if the contact type is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A list of contacttypes.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ContactTypesResponse"
+                        }
+                    }
+                }
+            }
         },
         "/contacttype/{id}": {
-            "$ref": "./paths/contacttype.json#/id"
+            "delete": {
+                "tags": [
+                    "contacttypes"
+                ],
+                "summary": "Delete a contact type",
+                "description": "Delete a contact type",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the contact type to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "contacttypes"
+                ],
+                "summary": "Updates a contact type",
+                "description": "Updates a contact type.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the contact type to update"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ContactTypeEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/ordertype": {
-            "$ref": "./paths/ordertype.json#/index"
+            "post": {
+                "tags": [
+                    "ordertypes"
+                ],
+                "summary": "Creates an order type",
+                "description": "Creates an order type.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrderTypeEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/ordertypes/": {
-            "$ref": "./paths/ordertypes.json#/index"
+            "get": {
+                "tags": [
+                    "ordertypes"
+                ],
+                "summary": "Find all of the order types",
+                "description": "Find all of the order types, it will return an array with order type entries containing an identifier, a boolean if the order type is currently deleted and the last modified date/time in local time",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "A list of ordertypes.",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrderTypesResponse"
+                        }
+                    }
+                }
+            }
         },
         "/ordertype/{id}": {
-            "$ref": "./paths/ordertype.json#/id"
+            "delete": {
+                "tags": [
+                    "ordertypes"
+                ],
+                "summary": "Delete a order type",
+                "description": "Delete a order type",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the order type to delete"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "ordertypes"
+                ],
+                "summary": "Updates a order type",
+                "description": "Updates a order type.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the order type to update"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/OrderTypeEntry"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                        }
+                    }
+                }
+            }
         },
         "/calendar/availableslots": {
-            "$ref": "./paths/calendar.json#/availableslots"
+            "get": {
+                "tags": [
+                    "calendar"
+                ],
+                "summary": "Obtain all available slots",
+                "description": "Obtain all available slots for an inspector based on zip, services and date offsets",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "inspector",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the inspector to use in the lookup"
+                    },
+                    {
+                        "in": "query",
+                        "name": "daysahead",
+                        "type": "number",
+                        "required": false,
+                        "description": "daysahead is the number of days that is added to the TODAY+OFFSET and essentially the end date.  The system will look between (TODAY + OFFSET) and (TODAY + OFFSET + DAYSAHEAD)"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "type": "number",
+                        "required": false,
+                        "description": "offset is the number of days that is added to today.  The system will look between (TODAY + OFFSET) and (TODAY + OFFSET + DAYSAHEAD)"
+                    },
+                    {
+                        "in": "query",
+                        "name": "services",
+                        "type": "string",
+                        "required": false,
+                        "description": "a comma separated list of the services to look for"
+                    },
+                    {
+                        "in": "query",
+                        "name": "zip",
+                        "type": "string",
+                        "required": false,
+                        "description": "the id (uuid) of the agent to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A Calendar Available Slots response",
+                        "schema": {
+                            "$ref": "./models/CalendarAvailableSlotsResponse.json"
+                        }
+                    }
+                }
+            }
         }
-
-
     },
-    "securityDefinitions": {
-        "access_keys": {
-            "type": "basic",
-            "name": "secret_access_key",
-            "in": "header"
-        }
-    },
+    "securityDefinitions": {},
     "externalDocs": {
         "description": "Find out more about the Inspection Support Network",
         "url": "https://www.inspectionsupport.net"

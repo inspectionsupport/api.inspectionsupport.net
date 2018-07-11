@@ -6,7 +6,7 @@
             ],
             "summary": "Find all of the clients",
             "description": "Find all of the clients, it will return an array with client entries containing an identifier, a boolean if the client is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
@@ -38,12 +38,13 @@
             ],
             "summary": "Find a client",
             "description": "Find clients based on a query string",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
                     "name": "q",
                     "required": false,
+                    "type":"string",
                     "description": "term to use for the client search"
                 }
             ],

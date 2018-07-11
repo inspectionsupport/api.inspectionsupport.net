@@ -6,11 +6,12 @@
             ],
             "summary": "Find a insurance agent",
             "description": "Find a insurance agent",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the insurance agent to fetch"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Delete a insurance agent",
             "description": "Delete a insurance agent",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the insurance agent to delete"
                 }
@@ -54,11 +56,12 @@
             ],
             "summary": "Updates a insurance agent",
             "description": "Updates a insurance agent.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the insurance agent to update"
                 }
@@ -80,7 +83,7 @@
             ],
             "summary": "Find one insurance agent by an email lookup",
             "description": "Find a single insurance agent by email address",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

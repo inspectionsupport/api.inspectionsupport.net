@@ -6,11 +6,12 @@
             ],
             "summary": "Fetch an order",
             "description": "Fetch a specific order",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the order to fetch"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Delete an order",
             "description": "Delete an order",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the order to delete"
                 }
@@ -54,11 +56,12 @@
             ],
             "summary": "Updates an order",
             "description": "Updates an order.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the order to update"
                 },
@@ -88,7 +91,7 @@
             ],
             "summary": "Creates an order",
             "description": "Creates an order.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "body",
@@ -116,11 +119,12 @@
             ],
             "summary": "Fetch the order fees from an order",
             "description": "Will return all of the order fees associated with the given order id",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id of the order to fetch the fees for"
                 }
@@ -142,11 +146,12 @@
             ],
             "summary": "Fetch the order history from an order",
             "description": "Will return all of the order history objects associated with the given order id",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id of the order to fetch the fees for"
                 }
@@ -168,11 +173,12 @@
             ],
             "summary": "Fetch the web delivery url from an order",
             "description": "returns the URL for the order's web delivery",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id of the order to fetch the url for"
                 }

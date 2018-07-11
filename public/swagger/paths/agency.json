@@ -6,11 +6,12 @@
             ],
             "summary": "Find a agency",
             "description": "Find a agency",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the agency to fetch"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Delete a agency",
             "description": "Delete a agency",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the agency to delete"
                 }
@@ -54,11 +56,12 @@
             ],
             "summary": "Updates an agency",
             "description": "Updates an agency.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the agency to update"
                 }
@@ -80,7 +83,7 @@
             ],
             "summary": "Creates an agency",
             "description": "Creates an agency.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "body",

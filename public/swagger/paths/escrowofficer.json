@@ -6,11 +6,12 @@
             ],
             "summary": "Find a escrow officer",
             "description": "Find a escrow officer",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the escrow officer to fetch"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Delete a escrow officer",
             "description": "Delete a escrow officer",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the escrow officer to delete"
                 }
@@ -54,11 +56,12 @@
             ],
             "summary": "Updates a escrow officer",
             "description": "Updates a escrow officer.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the escrow officer to update"
                 }
@@ -80,7 +83,7 @@
             ],
             "summary": "Creates an escrow officer",
             "description": "Creates an escrow officer.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "body",
@@ -108,12 +111,13 @@
             ],
             "summary": "Find one escrow officer by an email lookup",
             "description": "Find a single escrow officer by email address",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
                     "name": "q",
                     "required": true,
+                    "type":"string",
                     "description": "the email address to use during the lookup"
                 }
             ],

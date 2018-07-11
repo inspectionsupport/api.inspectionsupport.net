@@ -6,12 +6,13 @@
             ],
             "summary": "Find a client",
             "description": "Find a client",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
                     "required": true,
+                    "type": "string",
                     "description": "the id (uuid) of the client to fetch"
                 }
             ],
@@ -30,11 +31,12 @@
             ],
             "summary": "Delete a client",
             "description": "Delete a client",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the client to delete"
                 }
@@ -54,11 +56,12 @@
             ],
             "summary": "Updates a client",
             "description": "Updates a client.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the client to update"
                 }
@@ -80,7 +83,7 @@
             ],
             "summary": "Creates an client",
             "description": "Creates an client.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "body",
@@ -108,7 +111,7 @@
             ],
             "summary": "Find one client by an email lookup",
             "description": "Find a single client by email address",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

@@ -6,17 +6,21 @@
             ],
             "summary": "Find all of the agents",
             "description": "Find all of the agents, it will return an array with agent entries containing an identifier, a boolean if the agent is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": [
+                "application/json"
+            ],
             "parameters": [
                 {
                     "in": "query",
                     "name": "after",
+                    "type": "string",
                     "required": false,
                     "description": "[optional] - return a list of agents which were modified after the date/time provided"
                 },
                 {
                     "in": "query",
                     "name": "uuids",
+                    "type": "string",
                     "required": false,
                     "description": "[optional] - comma list of IDs to return"
                 }
@@ -31,28 +35,33 @@
             }
         }
     },
-    "search":{"get": {
-        "tags": ["agents"],
-        "summary": "Find an agent",
-        "description": "Find agents based on a query string",
-        "produces": "application/json",
-        "parameters": [
-            {
-                "in": "query",
-                "name": "q",
-                "required": false,
-                "description": "term to use for the agent search"
+    "search": {
+        "get": {
+            "tags": [
+                "agents"
+            ],
+            "summary": "Find an agent",
+            "description": "Find agents based on a query string",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "q",
+                    "required": false,
+                    "type": "string",
+                    "description": "term to use for the agent search"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of agents.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/AgentsSearchResponse"
+                    }
+                }
             }
-        ],
-        "responses": {
-            "200": {
-              "description": "A list of agents.",
-              "schema": {
-                "$ref": "../definitions.json#/definitions/AgentsSearchResponse"
-              }
-            }
-          }
-    }}
-    
-
+        }
+    }
 }

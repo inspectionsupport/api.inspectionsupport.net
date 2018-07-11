@@ -6,7 +6,7 @@
             ],
             "summary": "Find all of the orders",
             "description": "Find all of the orders, it will return an array with client entries containing an identifier, a boolean if the client is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
@@ -56,7 +56,7 @@
             ],
             "summary": "Find an order",
             "description": "Find orders based on a query string",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
@@ -106,7 +106,7 @@
             ],
             "summary": "Fetch all footprints",
             "description": "Find all of the user's footprints",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

@@ -6,7 +6,7 @@
             ],
             "summary": "Find all of the OBJECT_DESCRIPTION_LOWERs",
             "description": "Find all of the LOWER_PLURAL, it will return an array with OBJECT_DESCRIPTION_LOWER entries containing an identifier, a boolean if the OBJECT_DESCRIPTION_LOWER is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
@@ -38,7 +38,7 @@
             ],
             "summary": "Find a OBJECT_DESCRIPTION_LOWER",
             "description": "Find OBJECT_DESCRIPTION_LOWER based on a query string",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

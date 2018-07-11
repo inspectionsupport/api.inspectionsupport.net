@@ -6,7 +6,7 @@
             ],
             "summary": "Find all of the agencys",
             "description": "Find all of the agencies, it will return an array with agency entries containing an identifier, a boolean if the agency is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
@@ -38,7 +38,7 @@
             ],
             "summary": "Find an agency",
             "description": "Find agency based on a query string",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

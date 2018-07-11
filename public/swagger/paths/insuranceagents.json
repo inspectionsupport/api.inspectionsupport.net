@@ -6,7 +6,7 @@
             ],
             "summary": "Find all of the insurance agents",
             "description": "Find all of the insuranceagents, it will return an array with insurance agent entries containing an identifier, a boolean if the insurance agent is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
@@ -38,7 +38,7 @@
             ],
             "summary": "Find a insurance agent",
             "description": "Find insurance agent based on a query string",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

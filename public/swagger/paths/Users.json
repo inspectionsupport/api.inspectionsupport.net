@@ -6,7 +6,7 @@
             ],
             "summary": "Find all of the users",
             "description": "Find all of the users, it will return an array with user entries containing an identifier, a boolean if the user is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
@@ -38,7 +38,7 @@
             ],
             "summary": "Find a user",
             "description": "Find user based on a query string",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

@@ -6,7 +6,7 @@
             ],
             "summary": "Fetch offices for this ISN",
             "description": "Fetch the list of offices for this ISN.  Each user belongs to an office but may login to one or more offices.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [],
             "responses": {
                 "200": {

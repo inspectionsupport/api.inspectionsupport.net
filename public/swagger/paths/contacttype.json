@@ -6,11 +6,12 @@
             ],
             "summary": "Delete a contact type",
             "description": "Delete a contact type",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the contact type to delete"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Updates a contact type",
             "description": "Updates a contact type.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the contact type to update"
                 },
@@ -64,7 +66,7 @@
             ],
             "summary": "Creates an contact type",
             "description": "Creates an contact type.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "body",

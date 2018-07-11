@@ -6,7 +6,7 @@
             ],
             "summary": "Find all of the contacts",
             "description": "Find all of the contacts, it will return an array with contact entries containing an identifier, a boolean if the contact is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
@@ -38,7 +38,7 @@
             ],
             "summary": "Find a contact",
             "description": "Find contact based on a query string",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

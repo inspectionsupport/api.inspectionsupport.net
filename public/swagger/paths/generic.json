@@ -6,11 +6,12 @@
             ],
             "summary": "Find a OBJECT_DESCRIPTION_LOWER",
             "description": "Find a OBJECT_DESCRIPTION_LOWER",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the OBJECT_DESCRIPTION_LOWER to fetch"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Delete a OBJECT_DESCRIPTION_LOWER",
             "description": "Delete a OBJECT_DESCRIPTION_LOWER",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the OBJECT_DESCRIPTION_LOWER to delete"
                 }
@@ -54,11 +56,12 @@
             ],
             "summary": "Updates a OBJECT_DESCRIPTION_LOWER",
             "description": "Updates a OBJECT_DESCRIPTION_LOWER.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the OBJECT_DESCRIPTION_LOWER to update"
                 }
@@ -80,7 +83,7 @@
             ],
             "summary": "Find one OBJECT_DESCRIPTION_LOWER by an email lookup",
             "description": "Find a single OBJECT_DESCRIPTION_LOWER by email address",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

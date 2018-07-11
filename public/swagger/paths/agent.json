@@ -6,11 +6,12 @@
             ],
             "summary": "Find an agent",
             "description": "Find an agent",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the agent to fetch"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Delete an agent",
             "description": "Delete an agent",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the agent to delete"
                 }
@@ -54,11 +56,12 @@
             ],
             "summary": "Updates an agent",
             "description": "Updates an agent.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the agent to update"
                 }
@@ -80,7 +83,7 @@
             ],
             "summary": "Creates an agent",
             "description": "Creates an agent.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "body",
@@ -108,7 +111,7 @@
             ],
             "summary": "Find one agent by an email lookup",
             "description": "Find a single agent by email address",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",

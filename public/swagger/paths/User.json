@@ -6,11 +6,14 @@
             ],
             "summary": "Find a user",
             "description": "Find a user",
-            "produces": "application/json",
+            "produces": [
+                "application/json"
+            ],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the user to fetch"
                 }
@@ -30,11 +33,14 @@
             ],
             "summary": "Delete a user",
             "description": "Delete a user",
-            "produces": "application/json",
+            "produces": [
+                "application/json"
+            ],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the user to delete"
                 }
@@ -54,11 +60,14 @@
             ],
             "summary": "Updates a user",
             "description": "Updates a user.",
-            "produces": "application/json",
+            "produces": [
+                "application/json"
+            ],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the user to update"
                 }
@@ -80,7 +89,9 @@
             ],
             "summary": "Creates a user",
             "description": "Creates a user.",
-            "produces": "application/json",
+            "produces": [
+                "application/json"
+            ],
             "parameters": [
                 {
                     "in": "body",
@@ -108,7 +119,9 @@
             ],
             "summary": "Find one user by an email lookup",
             "description": "Find a single user by email address",
-            "produces": "application/json",
+            "produces": [
+                "application/json"
+            ],
             "parameters": [
                 {
                     "in": "query",

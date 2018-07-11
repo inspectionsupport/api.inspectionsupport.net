@@ -6,7 +6,7 @@
             ],
             "summary": "Find all of the order types",
             "description": "Find all of the order types, it will return an array with order type entries containing an identifier, a boolean if the order type is currently deleted and the last modified date/time in local time",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [ ],
             "responses": {
                 "200": {

@@ -6,11 +6,12 @@
             ],
             "summary": "Find a contact",
             "description": "Find a contact",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the contact to fetch"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Delete a contact",
             "description": "Delete a contact",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the contact to delete"
                 }
@@ -54,11 +56,12 @@
             ],
             "summary": "Updates a contact",
             "description": "Updates a contact.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the contact to update"
                 }
@@ -80,7 +83,7 @@
             ],
             "summary": "Creates an contact",
             "description": "Creates an contact.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "body",
@@ -108,12 +111,13 @@
             ],
             "summary": "Find one contact by an email lookup",
             "description": "Find a single contact by email address",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "query",
                     "name": "q",
                     "required": true,
+                    "type":"string",
                     "description": "the email address to use during the lookup"
                 }
             ],

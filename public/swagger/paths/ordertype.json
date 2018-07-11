@@ -6,11 +6,12 @@
             ],
             "summary": "Delete a order type",
             "description": "Delete a order type",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the order type to delete"
                 }
@@ -30,11 +31,12 @@
             ],
             "summary": "Updates a order type",
             "description": "Updates a order type.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "path",
                     "name": "id",
+                    "type": "string",
                     "required": true,
                     "description": "the id (uuid) of the order type to update"
                 },
@@ -64,7 +66,7 @@
             ],
             "summary": "Creates an order type",
             "description": "Creates an order type.",
-            "produces": "application/json",
+            "produces": ["application/json"],
             "parameters": [
                 {
                     "in": "body",
