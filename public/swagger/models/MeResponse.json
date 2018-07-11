@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "me": {
+            "$ref": "../definitions.json#/definitions/User",
+            "description": "the User object for the user authenticated"
+        },
+        "message": {
+            "type": "string",
+            "required": false,
+            "description": "message will contain an error if status is not 'ok'"
+        }
+    }
+}

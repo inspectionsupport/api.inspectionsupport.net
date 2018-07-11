@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "uid": {
+            "type": "string",
+            "required": true,
+            "description": "id of order history object"
+        },
+        "by": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user who created the history entry"
+        },
+        "when": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "amount of the fee"
+        },
+        "changes": {
+            "type": "array",
+            "items":{
+                "type": "string"
+            },
+            "required": true,
+            "description": "order changes for this entry"
+        }
+    }
+}

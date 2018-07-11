@@ -1,0 +1,464 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of order - in UUID format (char36)"
+        },
+        "oid": {
+            "type": "number",
+            "required": true,
+            "description": "the OID of the order"
+        },
+        "canceled": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order has been canceled or not"
+        },
+        "show": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order has been deleted or not"
+        },
+        "complete": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order has been completed (has a report)"
+        },
+        "paid": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order is paid"
+        },
+        "signature": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order has a signature (all of the pre-inspection agreements are signed"
+        },
+        "osorder": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was created via the Online Scheduler"
+        },
+        "office": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the office where this inspection originated"
+        },
+        "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "the date / time of the inspection"
+        },
+        "datetimeformatted": {
+            "type": "string",
+            "required": true,
+            "description": "formated version of the date/time based on the user's settings"
+        },
+        "duration": {
+            "type": "string",
+            "required": true,
+            "description": "the scheduled duration in minutes of the inspection"
+        },
+        "createddatetime": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "the date/time this inspection was created"
+        },
+        "createdby": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user responsive for creating the inspection"
+        },
+        "scheduleddatetime": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user responsive for scheduling the inspection"
+        },
+        "osscheduleddatetime": {
+            "type": "string",
+            "required": true,
+            "description": "the date/time this order was schedule by the Online Scheduler otherwise empty string"
+        },
+        "confirmeddatetime": {
+            "type": "string",
+            "required": true,
+            "description": "This holds the date/time of confirmation - otherwise empty string."
+        },
+        "deleteddatetime": {
+            "type": "string",
+            "required": true,
+            "description": "This holds the date/time of deletion - otherwise empty string."
+        },
+        "canceleddatetime": {
+            "type": "string",
+            "required": true,
+            "description": "This holds the date/time of cancel - otherwise empty string."
+        },
+        "completeddatetime": {
+            "type": "string",
+            "required": true,
+            "description": "This holds the date/time of completion - otherwise empty string."
+        },
+        "initialcompleteddatetime": {
+            "type": "string",
+            "required": true,
+            "description": "It is possible for inspections/orders to be compelted more than once.  This holds the original/first date/time of completion - otherwise empty string."
+        },
+        "scheduledby": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user who scheduled the inspection - otherwise an empty string"
+        },
+        "canceledby": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user who canceled the inspection - otherwise an empty string"
+        },
+        "confirmedby": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user who confirmed the inspection - otherwise an empty string"
+        },
+        "deletedby": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user who deleted the inspection - otherwise an empty string"
+        },
+        "initialcompletedby": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user who initially completed the inspection - otherwise an empty string if the inspection has not been completed at least once"
+        },
+        "completedby": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the user who - otherwise an empty string"
+        },
+        "referreason": {
+            "type": "string",
+            "required": true,
+            "description": "the id pointing to the refer reason"
+        },
+        "referredreason": {
+            "type": "string",
+            "required": true,
+            "description": "a textual reason for the referral if the referal reason was 'other'"
+        },
+        "cancelreason": {
+            "type": "string",
+            "required": true,
+            "description": "an id to the reason the inspection was canceled"
+        },
+        "cancelreasonstring": {
+            "type": "string",
+            "required": true,
+            "description": "a textual reason for the cancelation of the inspection - of the cancel reason was 'other'"
+        },
+        "client": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the client for the inspection - if no client was selected this will be an empty string"
+        },
+        "buyersagent": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the buyer's agent for the inspection - if no buyer's agent was selected this will be an empty string"
+        },
+        "sellersagent": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the seller's agent for the inspection - if no seller's agent was selected this will be an empty string"
+        },
+        "buyersagentcontactnotes": {
+            "type": "string",
+            "required": true,
+            "description": "specific contact notes for the buyer's agent"
+        },
+        "sellersagentcontactnotes": {
+            "type": "string",
+            "required": true,
+            "description": "specific contact notes for the seller's agent"
+        },
+        "insuranceagent": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the insurance agent for the inspection - if no insurance agent was selected this will be an empty string"
+        },
+        "escrowofficer": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the escrow officer for the inspection - if no escrow officer was selected this will be an empty string"
+        },
+        "squarefeet": {
+            "type": "string",
+            "required": true,
+            "description": "the square feet or square meters of the property"
+        },
+        "yearbuilt": {
+            "type": "string",
+            "required": true,
+            "description": "the year the property was constructed"
+        },
+        "totalfee": {
+            "type": "number",
+            "required": true,
+            "description": "total fee for the inspection"
+        },
+        "reportnumber": {
+            "type": "string",
+            "required": true,
+            "description": "the report number of the inspection - this may not be available until after the inspection"
+        },
+        "address1": {
+            "type": "string",
+            "required": true,
+            "description": "the second line of the address for the location of the inspection"
+        },
+        "address2": {
+            "type": "string",
+            "required": true,
+            "description": "the second line of the address for the location of the inspection"
+        },
+        "city": {
+            "type": "string",
+            "required": true,
+            "description": "city where the inspection is located"
+        },
+        "state": {
+            "type": "string",
+            "required": true,
+            "description": "state name of the location of the inspection"
+        },
+        "stateabbreviation": {
+            "type": "string",
+            "required": true,
+            "description": "state abbreviation of the location of the inspection"
+        },
+        "zip": {
+            "type": "string",
+            "required": true,
+            "description": "zip code / postal code for the inspection"
+        },
+        "county": {
+            "type": "string",
+            "required": true,
+            "description": "county of the inspection address"
+        },
+        "latitude": {
+            "type": "number",
+            "required": true,
+            "description": "the property's location in latitude"
+        },
+        "longitude": {
+            "type": "longitude",
+            "required": true,
+            "description": "the property's location in longitude"
+        },
+        "majorcrossstreets": {
+            "type": "string",
+            "required": true,
+            "description": "major cross streets for the inspection"
+        },
+        "mapurl": {
+            "type": "string",
+            "required": true,
+            "description": "the URL for the map of the property"
+        },
+        "policynumber": {
+            "type": "string",
+            "required": true,
+            "description": "if insurance is involved this will hold the policy number"
+        },
+        "policyholder": {
+            "type": "string",
+            "required": true,
+            "description": "if insurance is involved this will hold the policy holder's name"
+        },
+        "inspector1": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector2": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector3": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector4": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector5": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector6": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector7": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector8": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector9": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the inspector"
+        },
+        "inspector10": {
+            "type": "string",
+            "required": true,
+            "description": ""
+        },
+        "inspector1requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector2requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector3requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector4requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector5requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector6requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector7requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector8requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector9requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "inspector10requested": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the order was requested for the inspector"
+        },
+        "contacts": {
+            "type": "array",
+            "items": {
+                "$ref": "./ContactOrderEntry.json"
+            },
+            "required": true,
+            "description": ""
+        },
+        "ordertype": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the Order Type associated with the Order"
+        },
+        "foundation": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the Order Type associated with the Order"
+        },
+        "costcenter": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the Cost Center associated with the Order"
+        },
+        "costcentername": {
+            "type": "string",
+            "required": true,
+            "description": "the name of the Cost Center associated with the Order"
+        },
+        "fees": {
+            "type": "array",
+            "items": {
+                "$ref": "./FeeEntry.json"
+            },
+            "required": true,
+            "description": ""
+        },
+        "coupons": {
+            "type": "array",
+            "items": {
+                "$ref": "./CouponEntry.json"
+            },
+            "required": true,
+            "description": ""
+        },
+        "propertyoccupied": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if the property is occupied"
+        },
+        "utilitieson": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no - string to represent a boolean if utilities are on"
+        },
+        "gatecode": {
+            "type": "string",
+            "required": true,
+            "description": "the gatecode for the property"
+        },
+        "controls": {
+            "type": "array",
+            "items": {
+                "$ref": "./OrderControlEntry.json"
+            },
+            "required": true,
+            "description": ""
+        },
+        "services": {
+            "type": "array",
+            "items": {
+                "$ref": "./ServicesEntry.json"
+            },
+            "required": true,
+            "description": ""
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "the last date/time this contact was modified (in UTC)"
+        }
+
+    }
+}

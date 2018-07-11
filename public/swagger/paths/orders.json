@@ -1,0 +1,152 @@
+{
+    "index": {
+        "get": {
+            "tags": [
+                "orders"
+            ],
+            "summary": "Find all of the orders",
+            "description": "Find all of the orders, it will return an array with client entries containing an identifier, a boolean if the client is currently deleted and the last modified date/time in local time",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "after",
+                    "required": false,
+                    "description": "[optional] - return a list of orders which were modified after the date/time provided"
+                },
+                {
+                    "in": "query",
+                    "name": "datetimeafter",
+                    "required": false,
+                    "description": "[optional] - return a list of orders which are after the date/time provided (date/time of the inspection)"
+                },
+                {
+                    "in": "query",
+                    "name": "uuids",
+                    "required": false,
+                    "description": "[optional] - comma list of IDs to return"
+                },
+                {
+                    "in": "query",
+                    "name": "agentuuid",
+                    "required": false,
+                    "description": "[optional] - return a list of orders which are associated with this real estate agent's uuid"
+                },
+                {
+                    "in": "query",
+                    "name": "insuranceagentuuid",
+                    "required": false,
+                    "description": "[optional] - return a list of orders which are associated with this insurance agent's uuid"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of orders.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/OrdersResponse"
+                    }
+                }
+            }
+        }
+    },
+    "search": {
+        "get": {
+            "tags": [
+                "orders"
+            ],
+            "summary": "Find an order",
+            "description": "Find orders based on a query string",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "address1",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by address1"
+                },
+                {
+                    "in": "query",
+                    "name": "datetime",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by date/time of the inspection"
+                },
+                {
+                    "in": "query",
+                    "name": "reportnumber",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by reportnumber"
+                },
+                {
+                    "in": "query",
+                    "name": "year",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by year"
+                },
+                {
+                    "in": "query",
+                    "name": "client",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by client id (send in client's UUID/id)"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of orders.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/OrdersResponse"
+                    }
+                }
+            }
+        }
+    },
+    "footprints": {
+        "get": {
+            "tags": [
+                "orders"
+            ],
+            "summary": "Fetch all footprints",
+            "description": "Find all of the user's footprints",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "address1",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by address1"
+                },
+                {
+                    "in": "query",
+                    "name": "datetime",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by date/time of the inspection"
+                },
+                {
+                    "in": "query",
+                    "name": "reportnumber",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by reportnumber"
+                },
+                {
+                    "in": "query",
+                    "name": "year",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by year"
+                },
+                {
+                    "in": "query",
+                    "name": "client",
+                    "required": false,
+                    "description": "[ optional ] - search time to look for the order by client id (send in client's UUID/id)"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of order footprints (a list of FootprintEntries).",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/FootprintResponse"
+                    }
+                }
+            }
+        }
+    }
+}

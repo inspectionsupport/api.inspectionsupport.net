@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of contact"
+        },
+        "type": {
+            "type": "string",
+            "required": true,
+            "description": "type of contact"
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "index": {
+        "get": {
+            "tags": [
+                "insuranceagents"
+            ],
+            "summary": "Find all of the insurance agents",
+            "description": "Find all of the insuranceagents, it will return an array with insurance agent entries containing an identifier, a boolean if the insurance agent is currently deleted and the last modified date/time in local time",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "after",
+                    "required": false,
+                    "description": "[optional] - return a list of insurance agent which were modified after the date/time provided"
+                },
+                {
+                    "in": "query",
+                    "name": "uuids",
+                    "required": false,
+                    "description": "[optional] - comma list of IDs to return"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of InsuranceAgentResponse.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/InsuranceAgentResponse"
+                    }
+                }
+            }
+        }
+    },
+    "search": {
+        "get": {
+            "tags": [
+                "insuranceagents"
+            ],
+            "summary": "Find a insurance agent",
+            "description": "Find insurance agent based on a query string",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "q",
+                    "required": false,
+                    "description": "term to use for the insurance agent search"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of InsuranceAgents.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/InsuranceAgentSearchResponse"
+                    }
+                }
+            }
+        }
+    }
+}

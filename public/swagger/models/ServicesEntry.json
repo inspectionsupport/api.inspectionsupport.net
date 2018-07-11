@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "uuid": {
+            "type": "string",
+            "required": true,
+            "description": "id of service"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of the service"
+        }
+    }
+}

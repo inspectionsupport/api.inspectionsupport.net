@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of contact type"
+        },
+        "office": {
+            "type": "string",
+            "required": true,
+            "description": "id of office"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of contact type"
+        },
+        "show": {
+            "type": "boolean",
+            "required": true,
+            "description": "show/visible"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "modification date/time"
+        }
+    }
+}

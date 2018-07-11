@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "id": {
+            "type": "string",
+            "required": false,
+            "description": "id of the object that was updated"
+        },
+        "message": {
+            "type": "string",
+            "required": false,
+            "description": "if the call created an error this will contain the information about the error"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time",
+            "required": false,
+            "description": "last modification date/time from the object"
+        }
+    }
+}

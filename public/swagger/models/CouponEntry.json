@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "amount": {
+            "type": "number",
+            "required": true,
+            "description": "amount of the coupon"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of the coupon"
+        }
+    }
+}

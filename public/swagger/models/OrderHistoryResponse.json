@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "message": {
+            "type": "string",
+            "required": false,
+            "description": "if the call created an error this will contain the information about the error"
+        },
+        "history": {
+            "type": "array",
+            "items": {
+                "$ref": "../definitions.json#/definitions/OrderHistoryEntry"
+            },
+            "description": "a list of Order History entries"
+        }
+    }
+}

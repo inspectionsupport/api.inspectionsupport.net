@@ -1,0 +1,21 @@
+{
+    "index": {
+        "get": {
+            "tags": [
+                "contacttypes"
+            ],
+            "summary": "Find all of the contact types",
+            "description": "Find all of the contact types, it will return an array with contact type entries containing an identifier, a boolean if the contact type is currently deleted and the last modified date/time in local time",
+            "produces": "application/json",
+            "parameters": [ ],
+            "responses": {
+                "200": {
+                    "description": "A list of contacttypes.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ContactTypesResponse"
+                    }
+                }
+            }
+        }
+    }
+}

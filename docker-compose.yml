@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nginx_api:
+    image: nginx:latest
+    ports:
+      - 8989:80
+    volumes:
+      - ./public:/public
+      - ./site.conf:/etc/nginx/conf.d/site.conf

@@ -1,0 +1,104 @@
+{
+    "id": {
+        "get": {
+            "tags": [
+                "escrowoffices"
+            ],
+            "summary": "Find a escrow office",
+            "description": "Find a escrow office",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "the id (uuid) of the escrow office to fetch"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A EscrowOffice response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/EscrowOfficeResponse"
+                    }
+                }
+            }
+        },
+        "delete": {
+            "tags": [
+                "escrowoffices"
+            ],
+            "summary": "Delete a escrow office",
+            "description": "Delete a escrow office",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "the id (uuid) of the escrow office to delete"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "An action response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ActionResponse"
+                    }
+                }
+            }
+        },
+        "post": {
+            "tags": [
+                "escrowoffices"
+            ],
+            "summary": "Updates an escrow office",
+            "description": "Updates an escrow office.",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "the id (uuid) of the escrow office to update"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "An action response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ActionResponse"
+                    }
+                }
+            }
+        }
+    },
+    "index": {
+        "post": {
+            "tags": [
+                "escrowoffices"
+            ],
+            "summary": "Creates an escrow office",
+            "description": "Creates an escrow office.",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/EscrowOffice"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "An action response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ActionResponse"
+                    }
+                }
+            }
+        }
+    }
+}

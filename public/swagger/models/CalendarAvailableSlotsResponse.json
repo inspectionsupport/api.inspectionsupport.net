@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "message": {
+            "type": "string",
+            "required": false,
+            "description": "if the call created an error this will contain the information about the error"
+        },
+
+        "count": {
+            "type": "number",
+            "required": false,
+            "description": "total number of slots"
+        },
+        "zip": {
+            "type": "string",
+            "required": false,
+            "description": "the postalcode used for the search"
+        },
+        "daysahead": {
+            "type": "number",
+            "required": false,
+            "description": "days ahead"
+        },
+        "offset": {
+            "type": "string",
+            "required": false,
+            "description": "offset number of days from the start"
+        },
+        "services": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "required": false,
+            "description": "list of ids for the services (uuids)"
+        },
+        
+        "slots": {
+            "type": "array",
+            "items": {
+                "$ref": "../definitions.json#/definitions/CalendarAvailableSlotEntry"
+            },
+            "description": "a list of Calendar Available Slots Entries"
+        }
+    }
+}

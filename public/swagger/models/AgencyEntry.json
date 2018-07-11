@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of agency"
+        },
+        "show": {
+            "type": "boolean",
+            "required": true,
+            "description": "show/visible"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "modification date/time"
+        }
+    }
+}

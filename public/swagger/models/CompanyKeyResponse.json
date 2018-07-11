@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "companykey": {
+            "type": "string",
+            "required": false,
+            "description": "company key for this ISN"
+        }
+    }
+}

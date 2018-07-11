@@ -1,0 +1,60 @@
+{
+    "index": {
+        "get": {
+            "tags": [
+                "contacts"
+            ],
+            "summary": "Find all of the contacts",
+            "description": "Find all of the contacts, it will return an array with contact entries containing an identifier, a boolean if the contact is currently deleted and the last modified date/time in local time",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "after",
+                    "required": false,
+                    "description": "[optional] - return a list of contact which were modified after the date/time provided"
+                },
+                {
+                    "in": "query",
+                    "name": "uuids",
+                    "required": false,
+                    "description": "[optional] - comma list of IDs to return"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of ContactResponse.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ContactResponse"
+                    }
+                }
+            }
+        }
+    },
+    "search": {
+        "get": {
+            "tags": [
+                "contacts"
+            ],
+            "summary": "Find a contact",
+            "description": "Find contact based on a query string",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "q",
+                    "required": false,
+                    "description": "term to use for the contact search"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of Contacts.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ContactSearchResponse"
+                    }
+                }
+            }
+        }
+    }
+}

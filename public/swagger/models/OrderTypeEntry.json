@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of order type"
+        },
+        "office": {
+            "type": "string",
+            "required": true,
+            "description": "id of office"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of order type"
+        },
+        "description": {
+            "type": "string",
+            "required": true,
+            "description": "description of the order type"
+        },
+        "publicdescription": {
+            "type": "string",
+            "required": true,
+            "description": "public descrption of the order type"
+        },
+        "sequence": {
+            "type": "string",
+            "required": true,
+            "description": "sequence of the order type"
+        },
+        "show": {
+            "type": "boolean",
+            "required": true,
+            "description": "show/visible"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "modification date/time"
+        }
+    }
+}

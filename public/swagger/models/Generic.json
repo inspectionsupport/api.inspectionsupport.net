@@ -1,0 +1,106 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of the OBJECT_DESCRIPTION_LOWER"
+        },
+        "first": {
+            "type": "string",
+            "required": true,
+            "description": "first name of the OBJECT_DESCRIPTION_LOWER"
+        },
+        "last": {
+            "type": "string",
+            "required": true,
+            "description": "last name of the OBJECT_DESCRIPTION_LOWER"
+        },
+        "display": {
+            "type": "string",
+            "required": true,
+            "description": "display name of the OBJECT_DESCRIPTION_LOWER"
+        },
+        "email": {
+            "type": "string",
+            "required": true,
+            "description": "email address of the OBJECT_DESCRIPTION_LOWER"
+        },
+        "url": {
+            "type": "string",
+            "required": true,
+            "description": "url for the OBJECT_DESCRIPTION_LOWER"
+        },
+        "address1": {
+            "type": "string",
+            "required": true,
+            "description": "address (first line) of the OBJECT_DESCRIPTION_LOWER"
+        },
+        "address2": {
+            "type": "string",
+            "required": true,
+            "description": "address (second line) of the OBJECT_DESCRIPTION_LOWER"
+        },
+        "city": {
+            "type": "string",
+            "required": true,
+            "description": "the OBJECT_DESCRIPTION_LOWER's city"
+        },
+        "state": {
+            "type": "string",
+            "required": true,
+            "description": "the OBJECT_DESCRIPTION_LOWER's state"
+        },
+        "stateabbreviation": {
+            "type": "string",
+            "required": true,
+            "description": "the OBJECT_DESCRIPTION_LOWER's state (abbreviation)"
+        },
+        "zip": {
+            "type": "string",
+            "required": true,
+            "description": "zip/postal code for the OBJECT_DESCRIPTION_LOWER"
+        },
+        "workphone": {
+            "type": "string",
+            "required": true,
+            "description": "work phone number for the OBJECT_DESCRIPTION_LOWER"
+        },
+        "homephone": {
+            "type": "string",
+            "required": true,
+            "description": "home phone number for the OBJECT_DESCRIPTION_LOWER"
+        },
+        "mobilephone": {
+            "type": "string",
+            "required": true,
+            "description": "cell / mobile phone for the OBJECT_DESCRIPTION_LOWER"
+        },
+        "workfax": {
+            "type": "string",
+            "required": true,
+            "description": "work fax number for the OBJECT_DESCRIPTION_LOWER"
+        },
+        "homefax": {
+            "type": "string",
+            "required": true,
+            "description": "the OBJECT_DESCRIPTION_LOWER's home fax number"
+        },
+        "notes": {
+            "type": "string",
+            "required": true,
+            "description": "notes for the OBJECT_DESCRIPTION_LOWER"
+        },
+        "show": {
+            "type": "boolean",
+            "required": true,
+            "description": "false if the OBJECT_DESCRIPTION_LOWER is deleted otherwise true"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "the last date/time this OBJECT_DESCRIPTION_LOWER was modified (in UTC)"
+        }
+    }
+}

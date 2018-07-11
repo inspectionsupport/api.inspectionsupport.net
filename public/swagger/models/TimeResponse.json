@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "time": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "time in UTC according to ISN"
+        },
+        "client": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "time in client's timezone according to ISN"
+        }
+    }
+}

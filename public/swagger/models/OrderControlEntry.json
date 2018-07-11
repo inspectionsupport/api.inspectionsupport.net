@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of the control"
+        },
+        "label": {
+            "type": "string",
+            "required": true,
+            "description": "label for the control"
+        },
+        "type": {
+            "type": "string",
+            "required": true,
+            "description": "type of control"
+        },
+        "value": {
+            "type": "string",
+            "required": true,
+            "description": "value of the control"
+        }
+    }
+}

@@ -1,6 +1,6 @@
 {
     "apiVersion": "1.0",
-    "swaggerVersion": "1.1",
+    "swagger": "2.0",
     "basePath": "https://inspectionsupport.net/test/rest",
     "resourcePath": "/contact",
     "apis": [

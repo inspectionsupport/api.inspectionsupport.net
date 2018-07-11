@@ -1,0 +1,60 @@
+{
+    "index": {
+        "get": {
+            "tags": [
+                "escrowofficers"
+            ],
+            "summary": "Find all of the escrow officers",
+            "description": "Find all of the escrowofficers, it will return an array with escrow officer entries containing an identifier, a boolean if the escrow officer is currently deleted and the last modified date/time in local time",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "after",
+                    "required": false,
+                    "description": "[optional] - return a list of escrow officer which were modified after the date/time provided"
+                },
+                {
+                    "in": "query",
+                    "name": "uuids",
+                    "required": false,
+                    "description": "[optional] - comma list of IDs to return"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of EscrowOfficerResponse.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/EscrowOfficerResponse"
+                    }
+                }
+            }
+        }
+    },
+    "search": {
+        "get": {
+            "tags": [
+                "escrowofficers"
+            ],
+            "summary": "Find a escrow officer",
+            "description": "Find escrow officer based on a query string",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "q",
+                    "required": false,
+                    "description": "term to use for the escrow officer search"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of EscrowOfficers.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/EscrowOfficerSearchResponse"
+                    }
+                }
+            }
+        }
+    }
+}

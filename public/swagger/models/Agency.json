@@ -1,0 +1,99 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of agency"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of the agency"
+        },
+        "display": {
+            "type": "string",
+            "required": true,
+            "description": "display name of the agency"
+        },
+        "address1": {
+            "type": "string",
+            "required": true,
+            "description": "address (first line) of the agency"
+        },
+        "address2": {
+            "type": "string",
+            "required": true,
+            "description": "address (second line) of the agency"
+        },
+        "city": {
+            "type": "string",
+            "required": true,
+            "description": "agency's city"
+        },
+        "state": {
+            "type": "string",
+            "required": true,
+            "description": "agency's state"
+        },
+        "stateabbreviation": {
+            "type": "string",
+            "required": true,
+            "description": "agency's state abbreviation"
+        },
+        "zip": {
+            "type": "string",
+            "required": true,
+            "description": "zip/postal code for the agency"
+        },
+        "url": {
+            "type": "string",
+            "required": true,
+            "description": "url of the agency"
+        },
+        "phone": {
+            "type": "string",
+            "required": true,
+            "description": "phone number for the agency"
+        },
+        "fax": {
+            "type": "string",
+            "required": true,
+            "description": "fax number for the agency"
+        },
+        "show": {
+            "type": "boolean",
+            "required": true,
+            "description": "false if the agency is deleted"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "the last date/time this agency was modified"
+        },
+        "logourl": {
+            "type": "string",
+            "required": true,
+            "description": "url of the agency's logo"
+        },
+        "active": {
+            "type": "string",
+            "required": true,
+            "description": "yes or no depending on if the agency is active or not - determined by a user's settings"
+        },
+        "lastactive": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "the last date/time this agency was active"
+        },
+        "labels": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "name of the label"
+        }
+    }
+}

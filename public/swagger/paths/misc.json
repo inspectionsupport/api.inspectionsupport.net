@@ -1,0 +1,78 @@
+{
+    "companykey": {
+        "get": {
+            "tags": [
+                "util"
+            ],
+            "summary": "Fetch build number of this ISN",
+            "description": "Fetch the build number of this ISN.  ISN increments the build number when new updates are released.",
+            "produces": "application/json",
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "A Build Response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/BuildResponse"
+                    }
+                }
+            }
+        }
+    },
+    "me": {
+        "get": {
+            "tags": [
+                "util"
+            ],
+            "summary": "Fetch build number of this ISN",
+            "description": "Fetch the build number of this ISN.  ISN increments the build number when new updates are released.",
+            "produces": "application/json",
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "A Build Response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/BuildResponse"
+                    }
+                }
+            }
+        }
+    },
+    "build": {
+        "get": {
+            "tags": [
+                "util"
+            ],
+            "summary": "Fetch build number of this ISN",
+            "description": "Fetch the build number of this ISN.  ISN increments the build number when new updates are released.",
+            "produces": "application/json",
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "A Build Response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/BuildResponse"
+                    }
+                }
+            }
+        }
+    },
+    "time": {
+        "get": {
+            "tags": [
+                "util"
+            ],
+            "summary": "Fetch the date/time for this ISN",
+            "description": "Fetch the the date/time for this ISN in both UTC and client-local time adjusted for their timezone",
+            "produces": "application/json",
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "A Time Response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/TimeResponse"
+                    }
+                }
+            }
+        }
+    }
+}

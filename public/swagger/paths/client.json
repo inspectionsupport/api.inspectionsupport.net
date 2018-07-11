@@ -1,0 +1,130 @@
+{
+    "id": {
+        "get": {
+            "tags": [
+                "clients"
+            ],
+            "summary": "Find a client",
+            "description": "Find a client",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "the id (uuid) of the client to fetch"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A client response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ClientResponse"
+                    }
+                }
+            }
+        },
+        "delete": {
+            "tags": [
+                "clients"
+            ],
+            "summary": "Delete a client",
+            "description": "Delete a client",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "the id (uuid) of the client to delete"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "An action response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ActionResponse"
+                    }
+                }
+            }
+        },
+        "post": {
+            "tags": [
+                "clients"
+            ],
+            "summary": "Updates a client",
+            "description": "Updates a client.",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "the id (uuid) of the client to update"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "An action response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ActionResponse"
+                    }
+                }
+            }
+        }
+    },
+    "index": {
+        "post": {
+            "tags": [
+                "clients"
+            ],
+            "summary": "Creates an client",
+            "description": "Creates an client.",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/Client"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "An action response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ActionResponse"
+                    }
+                }
+            }
+        }
+    },
+    "lookup": {
+        "get": {
+            "tags": [
+                "clients"
+            ],
+            "summary": "Find one client by an email lookup",
+            "description": "Find a single client by email address",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "q",
+                    "required": true,
+                    "description": "the email address to use during the lookup"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A client response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/ClientResponse"
+                    }
+                }
+            }
+        }
+    }
+}

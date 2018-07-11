@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "message": {
+            "type": "string",
+            "required": false,
+            "description": "if the call created an error this will contain the information about the error"
+        },
+        "count": {
+            "type": "integer",
+            "required": true,
+            "description": "number of records returned"
+        },
+        "q": {
+            "type": "string",
+            "required": true,
+            "description": "contains the query passed in"
+        },
+        "contacts": {
+            "type": "array",
+            "items": {
+                "$ref": "../definitions.json#/definitions/ContactEntry"
+            },
+            "description": "a list of Contact entries"
+        }
+    }
+}

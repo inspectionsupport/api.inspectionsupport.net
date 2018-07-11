@@ -1,0 +1,106 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of the escrow officer"
+        },
+        "first": {
+            "type": "string",
+            "required": true,
+            "description": "first name of the escrow officer"
+        },
+        "last": {
+            "type": "string",
+            "required": true,
+            "description": "last name of the escrow officer"
+        },
+        "display": {
+            "type": "string",
+            "required": true,
+            "description": "display name of the escrow officer"
+        },
+        "email": {
+            "type": "string",
+            "required": true,
+            "description": "email address of the escrow officer"
+        },
+        "url": {
+            "type": "string",
+            "required": true,
+            "description": "url for the escrow officer"
+        },
+        "address1": {
+            "type": "string",
+            "required": true,
+            "description": "address (first line) of the escrow officer"
+        },
+        "address2": {
+            "type": "string",
+            "required": true,
+            "description": "address (second line) of the escrow officer"
+        },
+        "city": {
+            "type": "string",
+            "required": true,
+            "description": "the escrow officer's city"
+        },
+        "state": {
+            "type": "string",
+            "required": true,
+            "description": "the escrow officer's state"
+        },
+        "stateabbreviation": {
+            "type": "string",
+            "required": true,
+            "description": "the escrow officer's state (abbreviation)"
+        },
+        "zip": {
+            "type": "string",
+            "required": true,
+            "description": "zip/postal code for the escrow officer"
+        },
+        "workphone": {
+            "type": "string",
+            "required": true,
+            "description": "work phone number for the escrow officer"
+        },
+        "homephone": {
+            "type": "string",
+            "required": true,
+            "description": "home phone number for the escrow officer"
+        },
+        "mobilephone": {
+            "type": "string",
+            "required": true,
+            "description": "cell / mobile phone for the escrow officer"
+        },
+        "workfax": {
+            "type": "string",
+            "required": true,
+            "description": "work fax number for the escrow officer"
+        },
+        "homefax": {
+            "type": "string",
+            "required": true,
+            "description": "the escrow officer's home fax number"
+        },
+        "notes": {
+            "type": "string",
+            "required": true,
+            "description": "notes for the escrow officer"
+        },
+        "show": {
+            "type": "boolean",
+            "required": true,
+            "description": "false if the escrow officer is deleted otherwise true"
+        },
+        "modified": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "the last date/time this escrow officer was modified (in UTC)"
+        }
+    }
+}

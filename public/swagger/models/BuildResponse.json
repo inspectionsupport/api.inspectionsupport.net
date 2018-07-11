@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "build": {
+            "type": "string",
+            "required": false,
+            "description": "build number of this ISN"
+        }
+    }
+}

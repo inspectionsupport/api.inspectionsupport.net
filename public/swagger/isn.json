@@ -1,0 +1,319 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is the v1 API for the Inspection Support Network.  There is a v2 available and information is available at https://json.inspectionsupport.net/.",
+        "version": "5700",
+        "title": "ISN (v1) API",
+        "contact": {
+            "email": "help@inspectionsupport.net"
+        }
+    },
+    "host": "api.inspectionsupport.net",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "util",
+            "description": "Utility calls for the ISN.  Calls which do not impact objects on the ISN but rather provide or control information",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "offices",
+            "description": "Offices represent a collection of users at a geographic position",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "users",
+            "description": "Users are users relative to ISN and typically can login and perform actions on the ISN.  (e.g. inspectors, office managers, owners)",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "agents",
+            "description": "Agents are Inspector's pseudo clients - they manage the relationships and details of the transaction and typically there is an agent representing the buyer and the seller",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "agencies",
+            "description": "Agents belong to a single 'Agency' which has an office location and contact information",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "clients",
+            "description": "Clients are Inspector's clients - typically a home buyer or someone needing an inspection",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "contacts",
+            "description": "Dynamic contacts attached to an order.  Zero or more contacts can be associated with an Order (Inspection)",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "escrowofficers",
+            "description": "Escrow officers are typically included in the transaction",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "escrowoffices",
+            "description": "Escrow Offices are collections of Escrow Officers",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "insuranceagents",
+            "description": "Insurance Agents are involved in the transaction in some areas and for some types of inspections.",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "orders",
+            "description": "Orders are Inspection objects/encapsulations.  A single inspection booked at specific date/time and location.",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "contacttypes",
+            "description": "Contact Types of divisions of the contact list.  A contact belongs to one type of contact.",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "ordertypes",
+            "description": "Order Types of divisions of the orders.  An order can belong to one type of order type.",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        },
+        {
+            "name": "calendar",
+            "description": "Operations on the inspectors/users calendar(s).",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://development.isnadmin.com"
+            }
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/companykey": {
+            "$ref": "./paths/misc.json#/companykey"
+        },
+        "/me": {
+            "$ref": "./paths/misc.json#/me"
+        },
+        "/offices": {
+            "$ref": "./paths/offices.json#/index"
+        },
+        "/orders": {
+            "$ref": "./paths/orders.json#/index"
+        },
+        "/orders/footprints": {
+            "$ref": "./paths/orders.json#/footprints"
+        },
+        "/orders/search": {
+            "$ref": "./paths/orders.json#/search"
+        },
+        "/order/{id}": {
+            "$ref": "./paths/order.json#/id"
+        },
+        "/order": {
+            "$ref": "./paths/order.json#/index"
+        },
+        "/order/fees/{id}": {
+            "$ref": "./paths/order.json#/fees"
+        },
+        "/order/history/{id}": {
+            "$ref": "./paths/order.json#/history"
+        },
+        "/order/webdelivery/{id}": {
+            "$ref": "./paths/order.json#/webdelivery"
+        },
+        "/agents": {
+            "$ref": "./paths/agents.json#/index"
+        },
+        "/agents/search": {
+            "$ref": "./paths/agents.json#/search"
+        },
+        "/agent/{id}": {
+            "$ref": "./paths/agent.json#/id"
+        },
+        "/agent": {
+            "$ref": "./paths/agent.json#/index"
+        },
+        "/agent/lookup": {
+            "$ref": "./paths/agent.json#/lookup"
+        },
+        "/insuranceagents": {
+            "$ref": "./paths/insuranceagents.json#/index"
+        },
+        "/insuranceagents/search": {
+            "$ref": "./paths/insuranceagents.json#/search"
+        },
+        "/insuranceagent/{id}": {
+            "$ref": "./paths/insuranceagent.json#/id"
+        },
+        "/insuranceagent": {
+            "$ref": "./paths/insuranceagent.json#/index"
+        },
+        "/insuranceagent/lookup": {
+            "$ref": "./paths/insuranceagent.json#/lookup"
+        },
+        "/agencies": {
+            "$ref": "./paths/agencies.json#/index"
+        },
+        "/agencies/search": {
+            "$ref": "./paths/agencies.json#/search"
+        },
+        "/agency/{id}": {
+            "$ref": "./paths/agency.json#/id"
+        },
+        "/agency": {
+            "$ref": "./paths/agency.json#/index"
+        },
+        "/clients": {
+            "$ref": "./paths/clients.json#/index"
+        },
+        "/clients/search": {
+            "$ref": "./paths/clients.json#/search"
+        },
+        "/client/{id}": {
+            "$ref": "./paths/client.json#/id"
+        },
+        "/client/": {
+            "$ref": "./paths/client.json#/index"
+        },
+        "/client/lookup": {
+            "$ref": "./paths/client.json#/lookup"
+        },
+        "/users": {
+            "$ref": "./paths/users.json#/index"
+        },
+        "/users/search": {
+            "$ref": "./paths/users.json#/search"
+        },
+        "/user/{id}": {
+            "$ref": "./paths/user.json#/id"
+        },
+        "/user": {
+            "$ref": "./paths/user.json#/index"
+        },
+        "/user/lookup": {
+            "$ref": "./paths/user.json#/lookup"
+        },
+        "/contacts": {
+            "$ref": "./paths/contacts.json#/index"
+        },
+        "/contacts/search": {
+            "$ref": "./paths/contacts.json#/search"
+        },
+        "/contact/{id}": {
+            "$ref": "./paths/contact.json#/id"
+        },
+        "/contact/": {
+            "$ref": "./paths/contact.json#/index"
+        },
+        "/contact/lookup": {
+            "$ref": "./paths/contact.json#/lookup"
+        },
+        "/escrowofficers": {
+            "$ref": "./paths/escrowofficers.json#/index"
+        },
+        "/escrowofficers/search": {
+            "$ref": "./paths/escrowofficers.json#/search"
+        },
+        "/escrowofficer/{id}": {
+            "$ref": "./paths/escrowofficer.json#/id"
+        },
+        "/escrowofficer/": {
+            "$ref": "./paths/escrowofficer.json#/index"
+        },
+        "/escrowofficer/lookup": {
+            "$ref": "./paths/escrowofficer.json#/lookup"
+        },
+        "/escrowoffices": {
+            "$ref": "./paths/escrowoffices.json#/index"
+        },
+        "/escrowoffices/search": {
+            "$ref": "./paths/escrowoffices.json#/search"
+        },
+        "/escrowoffice/{id}": {
+            "$ref": "./paths/escrowoffice.json#/id"
+        },
+        "/escrowoffice": {
+            "$ref": "./paths/escrowoffice.json#/index"
+        },
+        "/build": {
+            "$ref": "./paths/misc.json#/build"
+        },
+        "/time": {
+            "$ref": "./paths/misc.json#/time"
+        },
+        "/contacttype": {
+            "$ref": "./paths/contacttype.json#/index"
+        },
+        "/contacttypes/": {
+            "$ref": "./paths/contacttypes.json#/index"
+        },
+        "/contacttype/{id}": {
+            "$ref": "./paths/contacttype.json#/id"
+        },
+        "/ordertype": {
+            "$ref": "./paths/ordertype.json#/index"
+        },
+        "/ordertypes/": {
+            "$ref": "./paths/ordertypes.json#/index"
+        },
+        "/ordertype/{id}": {
+            "$ref": "./paths/ordertype.json#/id"
+        },
+        "/calendar/availableslots": {
+            "$ref": "./paths/calendar.json#/availableslots"
+        }
+
+
+    },
+    "securityDefinitions": {
+        "access_keys": {
+            "type": "basic",
+            "name": "secret_access_key",
+            "in": "header"
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about the Inspection Support Network",
+        "url": "https://www.inspectionsupport.net"
+    }
+}

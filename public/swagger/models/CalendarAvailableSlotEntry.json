@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "userid": {
+            "type": "string",
+            "required": true,
+            "description": "the user's id"
+        },
+        "start": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "start date/time"
+        },
+        "end": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "end date/time"
+        },
+        "userdisplay": {
+            "type": "string",
+            "required": true,
+            "description": "user's display name"
+        },
+        "userfirst": {
+            "type": "string",
+            "required": true,
+            "description": "user's first name"
+        },
+        "userlast": {
+            "type": "string",
+            "required": true,
+            "description": "user's last name"
+        }
+    }
+}

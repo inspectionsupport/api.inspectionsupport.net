@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of escrow office"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of the escrow office"
+        },
+        "address1": {
+            "type": "string",
+            "required": true,
+            "description": "address (first line) of the escrow office"
+        },
+        "address2": {
+            "type": "string",
+            "required": true,
+            "description": "address (second line) of the escrow office"
+        },
+        "city": {
+            "type": "string",
+            "required": true,
+            "description": "escrow office's city"
+        },
+        "state": {
+            "type": "string",
+            "required": true,
+            "description": "escrow office's state"
+        },
+        "stateabbreviation": {
+            "type": "string",
+            "required": true,
+            "description": "escrow office's state abbreviation"
+        },
+        "zip": {
+            "type": "string",
+            "required": true,
+            "description": "zip/postal code for the escrow office"
+        },
+        "url": {
+            "type": "string",
+            "required": true,
+            "description": "url of the escrow office"
+        },
+        "phone": {
+            "type": "string",
+            "required": true,
+            "description": "phone number for the escrow office"
+        },
+        "fax": {
+            "type": "string",
+            "required": true,
+            "description": "fax number for the escrow office"
+        }
+    }
+}

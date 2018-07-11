@@ -1,0 +1,90 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of office"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of the office"
+        },
+        "slug": {
+            "type": "string",
+            "required": true,
+            "description": "the name of the office turned into the ISN-used slug"
+        },
+        "address": {
+            "type": "string",
+            "required": true,
+            "description": "address of the office"
+        },
+        "city": {
+            "type": "string",
+            "required": true,
+            "description": "office's city"
+        },
+        "state": {
+            "type": "string",
+            "required": true,
+            "description": "office's state"
+        },
+        "zip": {
+            "type": "string",
+            "required": true,
+            "description": "zip/postal code for the office"
+        },
+        "county": {
+            "type": "string",
+            "required": true,
+            "description": "county of the office"
+        },
+        "latitude": {
+            "type": "number",
+            "required": true,
+            "description": "office's location in latitude"
+        },
+        "longitude": {
+            "type": "number",
+            "required": true,
+            "description": "office's location in longitude"
+        },
+        "manager": {
+            "type": "string",
+            "required": true,
+            "description": "manager's name"
+        },
+        "manageremail": {
+            "type": "string",
+            "required": true,
+            "description": "manager's email address"
+        },
+        "phone": {
+            "type": "string",
+            "required": true,
+            "description": "phone number for the office"
+        },
+        "fax": {
+            "type": "string",
+            "required": true,
+            "description": "fax number for the office"
+        },
+        "url": {
+            "type": "string",
+            "required": true,
+            "description": "url of the office"
+        },
+        "helpdeskid": {
+            "type": "string",
+            "required": true,
+            "description": "[ no longer used ]"
+        },
+        "show": {
+            "type": "boolean",
+            "required": true,
+            "description": "false if the office is deleted"
+        }
+    }
+}

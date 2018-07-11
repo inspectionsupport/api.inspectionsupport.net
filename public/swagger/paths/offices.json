@@ -1,0 +1,21 @@
+{
+    "index": {
+        "get": {
+            "tags": [
+                "offices"
+            ],
+            "summary": "Fetch offices for this ISN",
+            "description": "Fetch the list of offices for this ISN.  Each user belongs to an office but may login to one or more offices.",
+            "produces": "application/json",
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "An OfficesResponse",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/OfficesResponse"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of footprint - in UUID format (char36)"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of the footprint (typically can be used to help format a filename)"
+        },
+        "order": {
+            "type": "string",
+            "required": true,
+            "description": "id of order - in UUID format (char36)"
+        },
+        "oid": {
+            "type": "number",
+            "required": true,
+            "description": "the OID of the order"
+        },
+        "address1": {
+            "type": "string",
+            "required": true,
+            "description": "the second line of the address for the location of the inspection"
+        },
+        "address2": {
+            "type": "string",
+            "required": true,
+            "description": "the second line of the address for the location of the inspection"
+        },
+        "city": {
+            "type": "string",
+            "required": true,
+            "description": "city where the inspection is located"
+        },
+        "state": {
+            "type": "string",
+            "required": true,
+            "description": "state name of the location of the inspection"
+        },
+        "zip": {
+            "type": "string",
+            "required": true,
+            "description": "zip code / postal code for the inspection"
+        },
+        "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "required": true,
+            "description": "date/time of the inspection associated with this footprint"
+        },
+        "client": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the client"
+        },
+        "buyersagent": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the buyer's agent"
+        },
+        "sellersagent": {
+            "type": "string",
+            "required": true,
+            "description": "the id of the seller's agent"
+        }
+    }
+}

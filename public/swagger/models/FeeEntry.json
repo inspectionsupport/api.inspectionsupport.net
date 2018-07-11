@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "description": "id of fee"
+        },
+        "amount": {
+            "type": "number",
+            "required": true,
+            "description": "amount of the fee"
+        },
+        "outsourceamount": {
+            "type": "number",
+            "required": true,
+            "description": "outsource amount of the fee"
+        },
+        "name": {
+            "type": "string",
+            "required": true,
+            "description": "name of the fee"
+        }
+    }
+}

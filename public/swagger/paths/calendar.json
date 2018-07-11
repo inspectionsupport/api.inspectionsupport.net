@@ -1,0 +1,52 @@
+{
+    "availableslots": {
+        "get": {
+            "tags": [
+                "calendar"
+            ],
+            "summary": "Obtain all available slots",
+            "description": "Obtain all available slots for an inspector based on zip, services and date offsets",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "inspector",
+                    "required": true,
+                    "description": "the id (uuid) of the inspector to use in the lookup"
+                },
+                {
+                    "in": "query",
+                    "name": "daysahead",
+                    "required": false,
+                    "description": "daysahead is the number of days that is added to the TODAY+OFFSET and essentially the end date.  The system will look between (TODAY + OFFSET) and (TODAY + OFFSET + DAYSAHEAD)"
+                },
+                {
+                    "in": "query",
+                    "name": "offset",
+                    "required": false,
+                    "description": "offset is the number of days that is added to today.  The system will look between (TODAY + OFFSET) and (TODAY + OFFSET + DAYSAHEAD)"
+                },
+                {
+                    "in": "query",
+                    "name": "services",
+                    "required": false,
+                    "description": "a comma separated list of the services to look for"
+                },
+                {
+                    "in": "query",
+                    "name": "zip",
+                    "required": false,
+                    "description": "the id (uuid) of the agent to fetch"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A Calendar Available Slots response",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/CalendarAvailableSlotsResponse"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "index": {
+        "get": {
+            "tags": [
+                "agencies"
+            ],
+            "summary": "Find all of the agencys",
+            "description": "Find all of the agencies, it will return an array with agency entries containing an identifier, a boolean if the agency is currently deleted and the last modified date/time in local time",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "after",
+                    "required": false,
+                    "description": "[optional] - return a list of agency which were modified after the date/time provided"
+                },
+                {
+                    "in": "query",
+                    "name": "uuids",
+                    "required": false,
+                    "description": "[optional] - comma list of IDs to return"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of AgencyResponse.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/AgencyResponse"
+                    }
+                }
+            }
+        }
+    },
+    "search": {
+        "get": {
+            "tags": [
+                "agencies"
+            ],
+            "summary": "Find an agency",
+            "description": "Find agency based on a query string",
+            "produces": "application/json",
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "q",
+                    "required": false,
+                    "description": "term to use for the agency search"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "A list of Agencies.",
+                    "schema": {
+                        "$ref": "../definitions.json#/definitions/AgenciesSearchResponse"
+                    }
+                }
+            }
+        }
+    }
+}

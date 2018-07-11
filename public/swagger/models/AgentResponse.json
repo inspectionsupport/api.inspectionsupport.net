@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "message": {
+            "type": "string",
+            "required": false,
+            "description": "if the call created an error this will contain the information about the error"
+        },
+        "agent": {
+            "$ref": "../definitions.json#/definitions/Agent",
+            "description": "an alient"
+        }
+    }
+}
