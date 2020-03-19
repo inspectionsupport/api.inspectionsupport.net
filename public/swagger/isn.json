@@ -1,15 +1,26 @@
 {
-    "swagger": "2.0",
+    "openapi": "3.0.0",
     "info": {
-        "description": "This is the v1 API for the Inspection Support Network.  There is a v2 available and information is available at https://json.inspectionsupport.net/.",
-        "version": "5700",
-        "title": "ISN (v1) API",
+        "version": "6320",
+        "termsOfService": "http://www.inspectionsupport.net/privacy/",
+        "title": "ISN REST API",
+        "description": "This is the v1 API for the Inspection Support Network.  There is a v2 available and information is available at https://api.inspectionsupport.net/.",
         "contact": {
+            "name": "Inspection Support Engineering",
+            "url": "https://www.inspectionsupport.net/company/about/",
             "email": "help@inspectionsupport.net"
         }
     },
-    "host": "api.inspectionsupport.net",
-    "basePath": "/",
+    "servers": [
+        {
+            "url": "https://inspectionsupport.com/test/json",
+            "description": "Test Server"
+        },
+        {
+            "url": "https://goisn.net/greenway/json",
+            "description": "Example Production Customer (Greenway)"
+        }
+    ],
     "tags": [
         {
             "name": "util",
@@ -124,9 +135,202 @@
             }
         }
     ],
-    "schemes": [
-        "https"
-    ],
+    "components": {
+        "securitySchemes": {
+            "BasicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            }
+        },
+        "schemas": {
+            "CalendarAvailableSlotEntry": {
+                "$ref": "./models/CalendarAvailableSlotEntry.json"
+            },
+            "CalendarAvailableSlotsResponse": {
+                "$ref": "./models/CalendarAvailableSlotsResponse.json"
+            },
+            "OrderTypeEntry": {
+                "$ref": "./models/OrderTypeEntry.json"
+            },
+            "OrderTypesResponse": {
+                "$ref": "./models/OrderTypesResponse.json"
+            },
+            "ContactTypeEntry": {
+                "$ref": "./models/ContactTypeEntry.json"
+            },
+            "ContactTypesResponse": {
+                "$ref": "./models/ContactTypesResponse.json"
+            },
+            "CompanyKeyResponse": {
+                "$ref": "./models/CompanyKeyResponse.json"
+            },
+            "MeResponse": {
+                "$ref": "./models/MeResponse.json"
+            },
+            "WebDeliveryUrlResponse": {
+                "$ref": "./models/WebDeliveryUrlResponse.json"
+            },
+            "FeeEntry": {
+                "$ref": "./models/FeeEntry.json"
+            },
+            "FootprintEntry": {
+                "$ref": "./models/FootprintEntry.json"
+            },
+            "FootprintResponse": {
+                "$ref": "./models/FootprintResponse.json"
+            },
+            "OrderEntry": {
+                "$ref": "./models/OrderEntry.json"
+            },
+            "OrderHistoryEntry": {
+                "$ref": "./models/OrderHistoryEntry.json"
+            },
+            "OrderHistoryResponse": {
+                "$ref": "./models/OrderHistoryResponse.json"
+            },
+            "OrderResponse": {
+                "$ref": "./models/OrderResponse.json"
+            },
+            "OrderFeeEntry": {
+                "$ref": "./models/OrderFeeEntry.json"
+            },
+            "OrderFeesResponse": {
+                "$ref": "./models/OrderFeesResponse.json"
+            },
+            "CouponEntry": {
+                "$ref": "./models/CouponEntry.json"
+            },
+            "OrderControlEntry": {
+                "$ref": "./models/OrderControlEntry.json"
+            },
+            "ServicesEntry": {
+                "$ref": "./models/ServicesEntry.json"
+            },
+            "ActionResponse": {
+                "$ref": "./models/ActionResponse.json"
+            },
+            "OfficeEntry": {
+                "$ref": "./models/OfficeEntry.json"
+            },
+            "OfficesResponse": {
+                "$ref": "./models/OfficesResponse.json"
+            },
+            "Agent": {
+                "$ref": "./models/Agent.json"
+            },
+            "AgentEntry": {
+                "$ref": "./models/AgentEntry.json"
+            },
+            "AgentResponse": {
+                "$ref": "./models/AgentResponse.json"
+            },
+            "AgentsResponse": {
+                "$ref": "./models/AgentsResponse.json"
+            },
+            "AgentsSearchResponse": {
+                "$ref": "./models/AgentsSearchResponse.json"
+            },
+            "Agency": {
+                "$ref": "./models/Agency.json"
+            },
+            "AgencyEntry": {
+                "$ref": "./models/AgencyEntry.json"
+            },
+            "AgencyResponse": {
+                "$ref": "./models/AgencyResponse.json"
+            },
+            "AgenciesResponse": {
+                "$ref": "./models/AgenciesResponse.json"
+            },
+            "AgenciesSearchResponse": {
+                "$ref": "./models/AgenciesSearchResponse.json"
+            },
+            "Client": {
+                "$ref": "./models/Client.json"
+            },
+            "ClientEntry": {
+                "$ref": "./models/ClientEntry.json"
+            },
+            "ClientResponse": {
+                "$ref": "./models/ClientResponse.json"
+            },
+            "ClientsResponse": {
+                "$ref": "./models/ClientsResponse.json"
+            },
+            "ClientsSearchResponse": {
+                "$ref": "./models/ClientsSearchResponse.json"
+            },
+            "Contact": {
+                "$ref": "./models/Contact.json"
+            },
+            "ContactEntry": {
+                "$ref": "./models/ContactEntry.json"
+            },
+            "ContactOrderEntry": {
+                "$ref": "./models/ContactOrderEntry.json"
+            },
+            "ContactResponse": {
+                "$ref": "./models/ContactResponse.json"
+            },
+            "ContactsResponse": {
+                "$ref": "./models/ContactsResponse.json"
+            },
+            "ContactsSearchResponse": {
+                "$ref": "./models/ContactsSearchResponse.json"
+            },
+            "User": {
+                "$ref": "./models/User.json"
+            },
+            "UserEntry": {
+                "$ref": "./models/UserEntry.json"
+            },
+            "UserResponse": {
+                "$ref": "./models/UserResponse.json"
+            },
+            "UsersResponse": {
+                "$ref": "./models/UsersResponse.json"
+            },
+            "UsersSearchResponse": {
+                "$ref": "./models/UsersSearchResponse.json"
+            },
+            "EscrowOfficer": {
+                "$ref": "./models/EscrowOfficer.json"
+            },
+            "EscrowOfficerEntry": {
+                "$ref": "./models/EscrowOfficerEntry.json"
+            },
+            "EscrowOfficerResponse": {
+                "$ref": "./models/EscrowOfficerResponse.json"
+            },
+            "EscrowOfficersResponse": {
+                "$ref": "./models/EscrowOfficersResponse.json"
+            },
+            "EscrowOfficersSearchResponse": {
+                "$ref": "./models/EscrowOfficersSearchResponse.json"
+            },
+            "EscrowOffice": {
+                "$ref": "./models/EscrowOffice.json"
+            },
+            "EscrowOfficeEntry": {
+                "$ref": "./models/EscrowOfficeEntry.json"
+            },
+            "EscrowOfficeResponse": {
+                "$ref": "./models/EscrowOfficeResponse.json"
+            },
+            "EscrowOfficesResponse": {
+                "$ref": "./models/EscrowOfficesResponse.json"
+            },
+            "EscrowOfficesSearchResponse": {
+                "$ref": "./models/EscrowOfficesSearchResponse.json"
+            },
+            "BuildResponse": {
+                "$ref": "./models/BuildResponse.json"
+            },
+            "TimeResponse": {
+                "$ref": "./models/TimeResponse.json"
+            }
+        },
+    },
     "paths": {
         "/companykey": {
             "get": {
@@ -143,7 +347,7 @@
                     "200": {
                         "description": "A Build Response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/BuildResponse"
+                            "$ref": "#/components/schemas/BuildResponse"
                         }
                     }
                 }
@@ -164,7 +368,7 @@
                     "200": {
                         "description": "A Build Response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/BuildResponse"
+                            "$ref": "#/components/schemas/BuildResponse"
                         }
                     }
                 }
@@ -185,7 +389,7 @@
                     "200": {
                         "description": "An OfficesResponse",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OfficesResponse"
+                            "$ref": "#/components/schemas/OfficesResponse"
                         }
                     }
                 }
@@ -242,7 +446,7 @@
                     "200": {
                         "description": "A list of orders.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrdersResponse"
+                            "$ref": "#/components/schemas/OrdersResponse"
                         }
                     }
                 }
@@ -263,7 +467,7 @@
                     "200": {
                         "description": "A list of order footprints (a list of FootprintEntries).",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/FootprintResponse"
+                            "$ref": "#/components/schemas/FootprintResponse"
                         }
                     }
                 }
@@ -320,7 +524,7 @@
                     "200": {
                         "description": "A list of orders.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrdersResponse"
+                            "$ref": "#/components/schemas/OrdersResponse"
                         }
                     }
                 }
@@ -349,7 +553,7 @@
                     "200": {
                         "description": "An order response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrderResponse"
+                            "$ref": "#/components/schemas/OrderResponse"
                         }
                     }
                 }
@@ -376,7 +580,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -403,7 +607,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrderEntry"
+                            "$ref": "#/components/schemas/OrderEntry"
                         }
                     }
                 ],
@@ -411,7 +615,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -424,14 +628,16 @@
                 ],
                 "summary": "Creates an order",
                 "description": "Creates an order.",
-                "produces": ["application/json"],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrderEntry"
+                            "$ref": "#/components/schemas/OrderEntry"
                         }
                     }
                 ],
@@ -439,7 +645,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -468,7 +674,7 @@
                     "200": {
                         "description": "An OrderFees response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrderFeesResponse"
+                            "$ref": "#/components/schemas/OrderFeesResponse"
                         }
                     }
                 }
@@ -497,7 +703,7 @@
                     "200": {
                         "description": "An OrderHistory response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrderHistoryResponse"
+                            "$ref": "#/components/schemas/OrderHistoryResponse"
                         }
                     }
                 }
@@ -526,7 +732,7 @@
                     "200": {
                         "description": "An WebDeliveryUrl response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/WebDeliveryUrlResponse"
+                            "$ref": "#/components/schemas/WebDeliveryUrlResponse"
                         }
                     }
                 }
@@ -562,7 +768,7 @@
                     "200": {
                         "description": "A list of agents.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/AgentsResponse"
+                            "$ref": "#/components/schemas/AgentsResponse"
                         }
                     }
                 }
@@ -591,7 +797,7 @@
                     "200": {
                         "description": "A list of agents.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/AgentsSearchResponse"
+                            "$ref": "#/components/schemas/AgentsSearchResponse"
                         }
                     }
                 }
@@ -620,7 +826,7 @@
                     "200": {
                         "description": "An agent response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/AgentResponse"
+                            "$ref": "#/components/schemas/AgentResponse"
                         }
                     }
                 }
@@ -647,7 +853,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -674,7 +880,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -696,7 +902,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/Agent"
+                            "$ref": "#/components/schemas/Agent"
                         }
                     }
                 ],
@@ -704,7 +910,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -733,7 +939,7 @@
                     "200": {
                         "description": "An agent response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/AgentResponse"
+                            "$ref": "#/components/schemas/AgentResponse"
                         }
                     }
                 }
@@ -762,7 +968,7 @@
                     "200": {
                         "description": "A list of InsuranceAgents.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/InsuranceAgentSearchResponse"
+                            "$ref": "#/components/schemas/InsuranceAgentSearchResponse"
                         }
                     }
                 }
@@ -791,7 +997,7 @@
                     "200": {
                         "description": "A InsuranceAgent response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/InsuranceAgentResponse"
+                            "$ref": "#/components/schemas/InsuranceAgentResponse"
                         }
                     }
                 }
@@ -818,7 +1024,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -845,7 +1051,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -881,7 +1087,7 @@
                     "200": {
                         "description": "A list of InsuranceAgentResponse.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/InsuranceAgentResponse"
+                            "$ref": "#/components/schemas/InsuranceAgentResponse"
                         }
                     }
                 }
@@ -910,7 +1116,7 @@
                     "200": {
                         "description": "A InsuranceAgent response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/InsuranceAgentResponse"
+                            "$ref": "#/components/schemas/InsuranceAgentResponse"
                         }
                     }
                 }
@@ -946,7 +1152,7 @@
                     "200": {
                         "description": "A list of AgencyResponse.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/AgencyResponse"
+                            "$ref": "#/components/schemas/AgencyResponse"
                         }
                     }
                 }
@@ -975,7 +1181,7 @@
                     "200": {
                         "description": "A list of Agencies.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/AgenciesSearchResponse"
+                            "$ref": "#/components/schemas/AgenciesSearchResponse"
                         }
                     }
                 }
@@ -1004,7 +1210,7 @@
                     "200": {
                         "description": "A Agency response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/AgencyResponse"
+                            "$ref": "#/components/schemas/AgencyResponse"
                         }
                     }
                 }
@@ -1031,7 +1237,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1058,7 +1264,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1080,7 +1286,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/Agency"
+                            "$ref": "#/components/schemas/Agency"
                         }
                     }
                 ],
@@ -1088,7 +1294,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1124,7 +1330,7 @@
                     "200": {
                         "description": "A list of clients.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ClientsResponse"
+                            "$ref": "#/components/schemas/ClientsResponse"
                         }
                     }
                 }
@@ -1153,7 +1359,7 @@
                     "200": {
                         "description": "A list of clients.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ClientsSearchResponse"
+                            "$ref": "#/components/schemas/ClientsSearchResponse"
                         }
                     }
                 }
@@ -1182,7 +1388,7 @@
                     "200": {
                         "description": "A client response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ClientResponse"
+                            "$ref": "#/components/schemas/ClientResponse"
                         }
                     }
                 }
@@ -1209,7 +1415,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1236,7 +1442,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1258,7 +1464,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/Client"
+                            "$ref": "#/components/schemas/Client"
                         }
                     }
                 ],
@@ -1266,7 +1472,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1295,7 +1501,7 @@
                     "200": {
                         "description": "A client response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ClientResponse"
+                            "$ref": "#/components/schemas/ClientResponse"
                         }
                     }
                 }
@@ -1331,7 +1537,7 @@
                     "200": {
                         "description": "A list of UserResponse.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/UserResponse"
+                            "$ref": "#/components/schemas/UserResponse"
                         }
                     }
                 }
@@ -1360,7 +1566,7 @@
                     "200": {
                         "description": "A list of Users.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/UserSearchResponse"
+                            "$ref": "#/components/schemas/UserSearchResponse"
                         }
                     }
                 }
@@ -1389,7 +1595,7 @@
                     "200": {
                         "description": "A User response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/UserResponse"
+                            "$ref": "#/components/schemas/UserResponse"
                         }
                     }
                 }
@@ -1416,7 +1622,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1443,7 +1649,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1465,7 +1671,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/User"
+                            "$ref": "#/components/schemas/User"
                         }
                     }
                 ],
@@ -1473,7 +1679,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1502,7 +1708,7 @@
                     "200": {
                         "description": "A User response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/UserResponse"
+                            "$ref": "#/components/schemas/UserResponse"
                         }
                     }
                 }
@@ -1538,7 +1744,7 @@
                     "200": {
                         "description": "A list of ContactResponse.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ContactResponse"
+                            "$ref": "#/components/schemas/ContactResponse"
                         }
                     }
                 }
@@ -1567,7 +1773,7 @@
                     "200": {
                         "description": "A list of Contacts.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ContactSearchResponse"
+                            "$ref": "#/components/schemas/ContactSearchResponse"
                         }
                     }
                 }
@@ -1596,7 +1802,7 @@
                     "200": {
                         "description": "A Contact response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ContactResponse"
+                            "$ref": "#/components/schemas/ContactResponse"
                         }
                     }
                 }
@@ -1623,7 +1829,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1650,7 +1856,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1672,7 +1878,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/Contact"
+                            "$ref": "#/components/schemas/Contact"
                         }
                     }
                 ],
@@ -1680,7 +1886,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1709,7 +1915,7 @@
                     "200": {
                         "description": "A Contact response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ContactResponse"
+                            "$ref": "#/components/schemas/ContactResponse"
                         }
                     }
                 }
@@ -1745,7 +1951,7 @@
                     "200": {
                         "description": "A list of EscrowOfficerResponse.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOfficerResponse"
+                            "$ref": "#/components/schemas/EscrowOfficerResponse"
                         }
                     }
                 }
@@ -1774,7 +1980,7 @@
                     "200": {
                         "description": "A list of Escrow Offices.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOfficesSearchResponse"
+                            "$ref": "#/components/schemas/EscrowOfficesSearchResponse"
                         }
                     }
                 }
@@ -1803,7 +2009,7 @@
                     "200": {
                         "description": "A EscrowOfficer response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOfficerResponse"
+                            "$ref": "#/components/schemas/EscrowOfficerResponse"
                         }
                     }
                 }
@@ -1830,7 +2036,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1857,7 +2063,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1879,7 +2085,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOfficer"
+                            "$ref": "#/components/schemas/EscrowOfficer"
                         }
                     }
                 ],
@@ -1887,7 +2093,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -1916,7 +2122,7 @@
                     "200": {
                         "description": "A EscrowOfficer response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOfficerResponse"
+                            "$ref": "#/components/schemas/EscrowOfficerResponse"
                         }
                     }
                 }
@@ -1952,7 +2158,7 @@
                     "200": {
                         "description": "A list of EscrowOffices entries.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOfficesResponse"
+                            "$ref": "#/components/schemas/EscrowOfficesResponse"
                         }
                     }
                 }
@@ -1981,7 +2187,7 @@
                     "200": {
                         "description": "A list of Escrow Offices.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOfficesSearchResponse"
+                            "$ref": "#/components/schemas/EscrowOfficesSearchResponse"
                         }
                     }
                 }
@@ -2010,7 +2216,7 @@
                     "200": {
                         "description": "A EscrowOffice response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOfficeResponse"
+                            "$ref": "#/components/schemas/EscrowOfficeResponse"
                         }
                     }
                 }
@@ -2037,7 +2243,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -2064,7 +2270,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -2086,7 +2292,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/EscrowOffice"
+                            "$ref": "#/components/schemas/EscrowOffice"
                         }
                     }
                 ],
@@ -2094,7 +2300,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -2115,7 +2321,7 @@
                     "200": {
                         "description": "A Build Response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/BuildResponse"
+                            "$ref": "#/components/schemas/BuildResponse"
                         }
                     }
                 }
@@ -2136,7 +2342,7 @@
                     "200": {
                         "description": "A Time Response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/TimeResponse"
+                            "$ref": "#/components/schemas/TimeResponse"
                         }
                     }
                 }
@@ -2158,7 +2364,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ContactTypeEntry"
+                            "$ref": "#/components/schemas/ContactTypeEntry"
                         }
                     }
                 ],
@@ -2166,7 +2372,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -2187,7 +2393,7 @@
                     "200": {
                         "description": "A list of contacttypes.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ContactTypesResponse"
+                            "$ref": "#/components/schemas/ContactTypesResponse"
                         }
                     }
                 }
@@ -2216,7 +2422,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -2243,7 +2449,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ContactTypeEntry"
+                            "$ref": "#/components/schemas/ContactTypeEntry"
                         }
                     }
                 ],
@@ -2251,7 +2457,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -2273,7 +2479,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrderTypeEntry"
+                            "$ref": "#/components/schemas/OrderTypeEntry"
                         }
                     }
                 ],
@@ -2281,7 +2487,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -2302,7 +2508,7 @@
                     "200": {
                         "description": "A list of ordertypes.",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrderTypesResponse"
+                            "$ref": "#/components/schemas/OrderTypesResponse"
                         }
                     }
                 }
@@ -2331,7 +2537,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }
@@ -2358,7 +2564,7 @@
                         "name": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/OrderTypeEntry"
+                            "$ref": "#/components/schemas/OrderTypeEntry"
                         }
                     }
                 ],
@@ -2366,7 +2572,7 @@
                     "200": {
                         "description": "An action response",
                         "schema": {
-                            "$ref": "./definitions.json#/definitions/ActionResponse"
+                            "$ref": "#/components/schemas/ActionResponse"
                         }
                     }
                 }

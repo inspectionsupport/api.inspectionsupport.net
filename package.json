@@ -1,0 +1,40 @@
+{
+  "name": "api.inspectionsupport.net",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jest": "25.1.4",
+    "@types/node": "13.9.2",
+    "@types/react": "16.9.23",
+    "@types/react-dom": "16.9.5",
+    "@types/swagger-ui-react": "^3.23.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.0",
+    "swagger-ui-react": "^3.25.0",
+    "typescript": "3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "deploy": "aws s3 sync build/ s3://api.inspectionsupport.net --profile isn --acl public-read",
+    "invalidate": "aws cloudfront create-invalidation --profile isn --distribution-id E21QVIUPNC2UYF --paths '/static/*' '/*'",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
