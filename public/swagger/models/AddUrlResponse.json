@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "required": true,
+            "description": "will contain either 'ok' or 'error' and will have a message"
+        },
+        "url": {
+            "type": "string",
+            "required": true,
+            "description": "url added"
+        },
+        "message": {
+            "type": "string",
+            "required": true,
+            "description": "any information obtained while adding the URL - typically empty"
+        }
+    }
+}

@@ -594,6 +594,50 @@
                 }
             }
         },
+        "/orders/addreporturl": {
+            "put": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Add web url to an Order",
+                "description": "If you deliver the report via a web URL you can call 'addreporturl' to add in a report URL to an order.",
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "required": true,
+                        "description": "ID of the order to add the URL to"
+                    },
+                    {
+                        "in": "query",
+                        "name": "url",
+                        "required": false,
+                        "description": "the url of the report"
+                    },
+                    {
+                        "in": "query",
+                        "name": "title",
+                        "required": false,
+                        "description": "The title of the report.  e.g. 'Inspection Report' or 'Termite Report'"
+                    },
+                    {
+                        "in": "query",
+                        "name": "public",
+                        "required": false,
+                        "description": "Boolean if the report should be public or private, typically you'll want to send a true here"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An echo response of the URL added",
+                        "schema": {
+                            "$ref": "#/components/schemas/AddUrlResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/order/{id}": {
             "get": {
                 "tags": [

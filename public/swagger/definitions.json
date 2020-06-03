@@ -186,6 +186,9 @@
         },
         "TimeResponse": {
             "$ref": "./models/TimeResponse.json"
+        },
+        "AddUrlResponse": {
+            "$ref": "./models/AddUrlResponse.json"
         }
     }
 }
