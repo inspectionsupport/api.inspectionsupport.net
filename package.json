@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "deploy": "aws s3 sync build/ s3://api.inspectionsupport.net --profile isn --acl public-read",
-    "invalidate": "aws cloudfront create-invalidation --profile isn --distribution-id E21QVIUPNC2UYF --paths '/static/*' '/*'",
+    "invalidate": "aws cloudfront create-invalidation --profile isn --distribution-id E21QVIUPNC2UYF --paths '/static/*' '/*' '/swagger/*.json'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
