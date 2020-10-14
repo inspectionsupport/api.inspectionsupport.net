@@ -400,7 +400,7 @@
                 "tags": [
                     "attachments"
                 ],
-                "summary": "Uploads an attachment to the ISN and associates it to an order",
+                "summary": "Uploads an attachment to the ISN and associate it to an order",
                 "description": "Uploads a binary file, typically a PDF, and associates it with an order.  This is done by providing the correct parameters to associate it to an order and then placing the binary stream in the body of the PUT request.",
                 "produces": [
                     "application/json"
@@ -633,6 +633,56 @@
                         "description": "An echo response of the URL added",
                         "schema": {
                             "$ref": "#/components/schemas/AddUrlResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/orders/uploadreport": {
+            "put": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Uploads an report to the ISN and associate it to an order",
+                "description": "Uploads a binary file, typically a PDF, and associates it with an order.  This is done by providing the correct parameters to associate it to an order and then placing the binary stream in the body of the PUT request.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the UUID/ID of the inspection/order"
+                    },
+                    {
+                        "in": "query",
+                        "name": "mimetype",
+                        "type": "string",
+                        "required": true,
+                        "description": "the mimetype of the file - if not provided we will attempt to detect it but typically safer to provide it - e.g. application/pdf"
+                    },
+                    {
+                        "in": "query",
+                        "name": "filename",
+                        "type": "string",
+                        "required": true,
+                        "description": "the filename of your attachment"
+                    },
+                    {
+                        "in": "query",
+                        "name": "title",
+                        "type": "string",
+                        "required": true,
+                        "description": "title of the file - this is textual title of what you are uploading - warning: this is made publicly visible to clients and agents"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An echo response of the report added",
+                        "schema": {
+                            "$ref": "#/components/schemas/OfficesResponse"
                         }
                     }
                 }
