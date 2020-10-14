@@ -643,6 +643,7 @@
                 "tags": [
                     "orders"
                 ],
+                "operationId": "ordersUploadReport",
                 "summary": "Uploads an report to the ISN and associate it to an order",
                 "description": "Uploads a binary file, typically a PDF, and associates it with an order.  This is done by providing the correct parameters to associate it to an order and then placing the binary stream in the body of the PUT request.",
                 "produces": [
@@ -767,6 +768,42 @@
                         "schema": {
                             "$ref": "#/components/schemas/OrderEntry"
                         }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An action response",
+                        "schema": {
+                            "$ref": "#/components/schemas/ActionResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/order/complete/{id}": {
+            "post": {
+                "tags": [
+                    "orders"
+                ],
+                "summary": "Completes an order",
+                "description": "Completes an order.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the order to update"
+                    },
+                    {
+                        "in": "query",
+                        "name": "reportnumber",
+                        "type": "string",
+                        "required": false,
+                        "description": "[optional] - the report number of the order"
                     }
                 ],
                 "responses": {
