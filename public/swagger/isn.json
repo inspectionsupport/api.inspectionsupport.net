@@ -2829,6 +2829,537 @@
                     }
                 }
             }
+        },
+        "/availableslots": {
+            "get": {
+                "tags": [
+                    "calendar"
+                ],
+                "summary": "Obtain all available slots",
+                "description": "Alias of /calendar/availableslots that matches the RestController action name.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "inspector",
+                        "type": "string",
+                        "required": true,
+                        "description": "the id (uuid) of the inspector to use in the lookup"
+                    },
+                    {
+                        "in": "query",
+                        "name": "daysahead",
+                        "type": "number",
+                        "required": false,
+                        "description": "daysahead is the number of days that is added to the TODAY+OFFSET and essentially the end date.  The system will look between (TODAY + OFFSET) and (TODAY + OFFSET + DAYSAHEAD)"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "type": "number",
+                        "required": false,
+                        "description": "offset is the number of days that is added to today.  The system will look between (TODAY + OFFSET) and (TODAY + OFFSET + DAYSAHEAD)"
+                    },
+                    {
+                        "in": "query",
+                        "name": "services",
+                        "type": "string",
+                        "required": false,
+                        "description": "a comma separated list of the services to look for"
+                    },
+                    {
+                        "in": "query",
+                        "name": "zip",
+                        "type": "string",
+                        "required": false,
+                        "description": "the id (uuid) of the agent to fetch"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A Calendar Available Slots response",
+                        "schema": {
+                            "$ref": "./models/CalendarAvailableSlotsResponse.json"
+                        }
+                    }
+                }
+            }
+        },
+        "/{action}": {
+            "get": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "Generic GET actions",
+                "description": "Provides documentation coverage for RestController GET actions that do not require additional path segments. Supported actions: active, amountdue, availableslots, billable, calendarevents, cancelreasons, ccinfo, company, completeorder, computeordernumber, costcenters, countries, coupons, emailcontainers, emailtemplates, fees, foundationtypes, geocode, helpdeskusers, isnbin, massmails, massmailsqueued, orderfiles, packages, propertyphotos, referreasons, reflect, relocationcompanies, relocationcontacts, services, states, status, transfereecompanies, transferees.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "active",
+                            "amountdue",
+                            "availableslots",
+                            "billable",
+                            "calendarevents",
+                            "cancelreasons",
+                            "ccinfo",
+                            "company",
+                            "completeorder",
+                            "computeordernumber",
+                            "costcenters",
+                            "countries",
+                            "coupons",
+                            "emailcontainers",
+                            "emailtemplates",
+                            "fees",
+                            "foundationtypes",
+                            "geocode",
+                            "helpdeskusers",
+                            "isnbin",
+                            "massmails",
+                            "massmailsqueued",
+                            "orderfiles",
+                            "packages",
+                            "propertyphotos",
+                            "referreasons",
+                            "reflect",
+                            "relocationcompanies",
+                            "relocationcontacts",
+                            "services",
+                            "states",
+                            "status",
+                            "transfereecompanies",
+                            "transferees"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "Generic POST actions",
+                "description": "Covers RestController POST actions that operate directly on the action name without a second path segment. Supported actions: addpayment, calculateservicequote, calendarevent, cancelreason, completeorder, country, coupon, createfootprint, emailcontainer, emailtemplate, fee, foundationtype, isnbin, office, package, referreason, reflect, refreshagentstats, service, state, transfersentemail, weather.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "addpayment",
+                            "calculateservicequote",
+                            "calendarevent",
+                            "cancelreason",
+                            "completeorder",
+                            "country",
+                            "coupon",
+                            "createfootprint",
+                            "emailcontainer",
+                            "emailtemplate",
+                            "fee",
+                            "foundationtype",
+                            "isnbin",
+                            "office",
+                            "package",
+                            "referreason",
+                            "reflect",
+                            "refreshagentstats",
+                            "service",
+                            "state",
+                            "transfersentemail",
+                            "weather"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "Generic PUT actions",
+                "description": "Covers RestController PUT actions that do not require an extra path segment. Supported actions: country, massmailsuppression, propertyphotoupload, reflect, reportupload, state.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "country",
+                            "massmailsuppression",
+                            "propertyphotoupload",
+                            "reflect",
+                            "reportupload",
+                            "state"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "Generic DELETE actions",
+                "description": "Covers RestController DELETE actions that affect a collection or echo the request body. Supported actions: country, reflect, states.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "country",
+                            "reflect",
+                            "states"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/{action}/{resourceId}": {
+            "get": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "GET actions with a resource identifier",
+                "description": "Documents RestController GET actions that require a resource identifier path segment. Supported actions: emailcontainer, emailtemplate, fee, massmail, office, orderfees, propertyphoto, relocationcompany, relocationcontact, transferee, transfereecompany.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "emailcontainer",
+                            "emailtemplate",
+                            "fee",
+                            "massmail",
+                            "office",
+                            "orderfees",
+                            "propertyphoto",
+                            "relocationcompany",
+                            "relocationcontact",
+                            "transferee",
+                            "transfereecompany"
+                        ]
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceId",
+                        "type": "string",
+                        "required": true,
+                        "description": "Identifier, UUID, or slug required by the selected action."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "POST actions with a resource identifier",
+                "description": "Documents RestController POST actions that use a second path segment for updates or sub-operations. Supported actions: 3rdpartymailer, calendarevent, cancelreason, coupon, emailcontainer, emailtemplate, fee, foundationtype, helpdeskoffice, helpdeskuser, hooks, massmail, office, orderppu, package, referreason, service.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "3rdpartymailer",
+                            "calendarevent",
+                            "cancelreason",
+                            "coupon",
+                            "emailcontainer",
+                            "emailtemplate",
+                            "fee",
+                            "foundationtype",
+                            "helpdeskoffice",
+                            "helpdeskuser",
+                            "hooks",
+                            "massmail",
+                            "office",
+                            "orderppu",
+                            "package",
+                            "referreason",
+                            "service"
+                        ]
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceId",
+                        "type": "string",
+                        "required": true,
+                        "description": "Identifier, UUID, or slug required by the selected action (for example a resource UUID or operation keyword)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "PUT actions with a resource identifier",
+                "description": "Documents RestController PUT actions that accept a second path segment. Supported actions: active, billable, helpdeskid.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "active",
+                            "billable",
+                            "helpdeskid"
+                        ]
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceId",
+                        "type": "string",
+                        "required": true,
+                        "description": "Boolean flag or identifier consumed by the selected action."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "DELETE actions with a resource identifier",
+                "description": "Documents RestController DELETE actions that require a second path segment. Supported actions: attachment, calendarevent, cancelreason, coupon, emailcontainer, emailtemplate, fee, foundationtype, hooks, package, referreason, report, service, state.",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "attachment",
+                            "calendarevent",
+                            "cancelreason",
+                            "coupon",
+                            "emailcontainer",
+                            "emailtemplate",
+                            "fee",
+                            "foundationtype",
+                            "hooks",
+                            "package",
+                            "referreason",
+                            "report",
+                            "service",
+                            "state"
+                        ]
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceId",
+                        "type": "string",
+                        "required": true,
+                        "description": "Identifier or slug required by the selected action."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/{action}/{resourceId}/{detail}": {
+            "post": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "POST actions with two extra path segments",
+                "description": "Documents RestController POST actions that require two additional path segments. Supported action: zapier (resourceId is the event name, detail is an optional secondary identifier).",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "zapier"
+                        ]
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceId",
+                        "type": "string",
+                        "required": true,
+                        "description": "Primary operation or event key consumed by the action."
+                    },
+                    {
+                        "in": "path",
+                        "name": "detail",
+                        "type": "string",
+                        "required": true,
+                        "description": "Secondary identifier consumed by the action."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "util"
+                ],
+                "summary": "DELETE actions with two extra path segments",
+                "description": "Documents RestController DELETE actions that require two additional path segments. Supported action: orders (resourceId must be \"footprint\" and detail is the footprint UUID).",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "action",
+                        "type": "string",
+                        "required": true,
+                        "description": "RestController action to invoke.",
+                        "enum": [
+                            "orders"
+                        ]
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceId",
+                        "type": "string",
+                        "required": true,
+                        "description": "Resource keyword required by the selected action (for example \"footprint\")."
+                    },
+                    {
+                        "in": "path",
+                        "name": "detail",
+                        "type": "string",
+                        "required": true,
+                        "description": "Identifier consumed by the selected action (for example a footprint UUID)."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Action-specific response payload.",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
         }
     },
     "securityDefinitions": {},
