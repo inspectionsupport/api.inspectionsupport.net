@@ -1,10 +1,10 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "version": "6320",
+        "version": "8400",
         "termsOfService": "http://www.inspectionsupport.net/privacy/",
         "title": "ISN REST API",
-        "description": "This is the v1 API for the Inspection Support Network.  There is a v2 available and information is available at https://api.inspectionsupport.net/.",
+        "description": "This is the v1 API for the Inspection Support Network.",
         "contact": {
             "name": "Inspection Support Engineering",
             "url": "https://www.inspectionsupport.net/company/about/",
